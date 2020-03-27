@@ -1,0 +1,663 @@
+backend:
+  name: bitbucket
+  repo: kyletaylored/jpshealth-programs
+  branch: master # Branch to update (optional; defaults to master)
+  site_domain: jps.kyletaylored.com
+
+# This line should *not* be indented
+media_folder: "assets/img" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "academic_affairs"
+    label: "Academic Affairs"
+    folder: "_academic_affairs"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "emergency_medicine"
+    label: "Emergency Medicine"
+    folder: "_emergency_medicine"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "family_medicine"
+    label: "Family Medicine"
+    folder: "_family_medicine"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "obgyn"
+    label: "OBGYN"
+    folder: "_obgyn"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "orthopaedics"
+    label: "Orthopaedics"
+    folder: "_orthopaedics"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "podiatry"
+    label: "Podiatry"
+    folder: "_podiatry"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "psychiatry"
+    label: "Psychiatry"
+    folder: "_psychiatry"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "sports_medicine"
+    label: "Sports Medicine"
+    folder: "_sports_medicine"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "transitional"
+    label: "Transitional"
+    folder: "_transitional"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "geriatric_medicine"
+    label: "Geriatric Medicine"
+    folder: "_geriatric_medicine"
+    identifier_field: title
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Navigation Title"
+        name: "nav_title"
+        widget: "string"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Hero Type"
+        name: "hero_type"
+        widget: "select"
+        required: false
+        default: ["carousel"]
+        options:
+          - { label: "None", value: "none" }
+          - { label: "Banner", value: "banner" }
+          - { label: "Carousel", value: "carousel" }
+      - label: "Banner Source"
+        name: "hero_src"
+        widget: "image"
+        required: false
+      - label: "Carousel Source"
+        name: "banner_src"
+        widget: "relation"
+        collection: "carousel"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false
+      - label: "Subcontent"
+        name: "subcontent"
+        widget: "string"
+        required: false
+      - label: "Roster"
+        name: "roster"
+        widget: "file"
+        required: false
+
+  - name: "chairmen"
+    label: "Chairmen"
+    folder: "_chairmen"
+    identifier_field: name
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title", name: "title", widget: "list" }
+      - { label: "Specialty", name: "specialty", widget: "list" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Order", name: "order", widget: "number", default: 1, valueType: "int", min: 1, step: 1, hint: "From 1 to any, the order in which chairmen should appear. Lowest number first.", }
+      - label: "Program"
+        name: "program"
+        widget: "select"
+        required: true
+        options:
+          - academic_affairs
+          - emergency_medicine
+          - family_medicine
+          - geriatric_medicine
+          - obgyn
+          - orthopaedics
+          - podiatry
+          - psychiatry
+          - sports_medicine
+          - transitional
+      - { label: "Bio", name: "body", widget: "markdown", required: false }
+
+  - name: "faculty" # Used in routes, e.g., /admin/collections/blog
+    label: "Faculty" # Used in the UI
+    folder: "_faculty" # The path to the folder where the documents are stored
+    identifier_field: title
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "title", widget: "string" }
+      - {
+          label: "Department",
+          name: "department",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Group", name: "group", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Program"
+        name: "program"
+        widget: "select"
+        required: true
+        options:
+          - academic_affairs
+          - emergency_medicine
+          - family_medicine
+          - geriatric_medicine
+          - obgyn
+          - orthopaedics
+          - podiatry
+          - psychiatry
+          - sports_medicine
+          - transitional
+      - { label: "Bio", name: "body", widget: "markdown", required: false }
+
+  - name: "residents"
+    label: "Residents & Interns"
+    folder: "_residents"
+    identifier_field: name
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Title",
+          name: "name",
+          widget: "string",
+          "hint": "Any descriptive title will work here.",
+        }
+      - label: "Program"
+        name: "program"
+        widget: "select"
+        required: true
+        options:
+          - academic_affairs
+          - emergency_medicine
+          - family_medicine
+          - geriatric_medicine
+          - obgyn
+          - orthopaedics
+          - podiatry
+          - psychiatry
+          - sports_medicine
+          - transitional
+      - label: "Group"
+        name: "group"
+        widget: "list"
+        hint: "Individual group (i.e PGY 1)"
+        fields:
+          - {
+              label: "Group name",
+              name: "name",
+              widget: "string",
+              hint: "Name of group. i.e 'PGY 1'",
+            }
+          - { label: "List of people", name: "people", widget: "list" }
+  - name: "carousel"
+    label: "Carousels"
+    folder: "_carousel"
+    identifier_field: name
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - label: "Title"
+        name: "name"
+        widget: "string"
+        hint: "Any descriptive title will work here."
+      - label: "Program"
+        name: "program"
+        widget: "select"
+        required: false
+        options:
+          - academic_affairs
+          - emergency_medicine
+          - family_medicine
+          - geriatric_medicine
+          - obgyn
+          - orthopaedics
+          - podiatry
+          - psychiatry
+          - sports_medicine
+          - transitional
+      - label: "Slides"
+        name: "slides"
+        widget: "list"
+        fields:
+          - label: Alternative text
+            name: "alt"
+            widget: "string"
+            hint: "Alt tag text"
+            required: false
+          - label: "Image source"
+            name: "src"
+            widget: "image"

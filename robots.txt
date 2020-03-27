@@ -1,0 +1,4 @@
+# Don't track any pages
+User-agent: *
+Disallow: /
+Noindex: /

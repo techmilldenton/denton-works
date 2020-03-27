@@ -1,0 +1,31 @@
+---
+layout: jps
+---
+{% assign nav_title = page.nav_title | default: page.title %}
+<div id="jpsh-programs" class="{{ page.collection | replace: "_", "-" }}-wrapper {{ page.slug | replace: "_", "-" }} ">
+	{% include hero-image.html %}
+	{% include sub-hero.html %}
+	{% include program-header.html %}
+	<div class="row">
+		<aside id="program-sidebar" class="col-md-3">
+			{% include collection-menu.html %}
+		</aside>
+		<div id="program-content" class="col-md-9">
+			<div class="title-group clearfix">
+				{% if page.roster %}
+					<h4 class="title">{{ nav_title }}</h4><em class="roster-link">(<a target="_blank" href="{{ page.roster }}">See Visual Roster</a>)</em>
+				{% else %}
+					<h4 class="title">{{ page.title }}</h4>
+				{% endif %}
+			</div>
+			<div class="{{ page.slug }}">
+				{{ content }}
+			</div>
+		</div>
+	</div>
+	<div id="program-subcontent" class="">
+		{% if page.subcontent %}
+		  {% include {{ page.subcontent }} %}
+		{% endif %}
+	</div>
+</div>

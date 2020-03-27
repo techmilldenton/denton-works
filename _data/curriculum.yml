@@ -1,0 +1,112 @@
+- program: orthopaedics
+  items:
+    - name: PGY 1
+      children:
+        - "3 months of Ortho Trauma"
+        - "3 months of Ortho Subspecialty"
+        - "2 months of General Surgery"
+        - "1 month of Skills Lab"
+        - "1 month of Plastic Surgery, SICU, and Physical Medicine & Rehabilitation"
+    - name: PGY 2
+      children:
+        - "3 months of Ortho Trauma"
+        - "3 months of Pedi Ortho"
+        - "2 months of Spine/Oncology"
+        - "3 months of Total Joints"
+        - "1 Month Oncology"
+    - name: PGY 3
+      children:
+        - "3 month of Ortho Trauma"
+        - "3 months of Hand"
+        - "3 months of Sports"
+        - "1.5 months of Research/ Professional Development "
+        - "1.5 months of Foot and Ankle"
+    - name: PGY 4
+      children:
+        - "3 months of Ortho Trauma"
+        - "1.5 months of Research/ Professional Development"
+        - "1.5 months of Foot and Ankle"
+        - "3 months of Spine"
+        - "3 months of Total Joints"
+    - name: PGY 5
+      children:
+        - "3 months of Ortho Trauma"
+        - "3 months of Sports"
+        - "3 months of Hand"
+        - "3 months of Pedi Ortho"
+
+- program: podiatry
+  items:
+    - name: PGY 1
+      subtext: "Podiatry – 5 months, Plus 1 month each:"
+      children:
+        - Radiology/Anesthesia
+        - Internal Medicine
+        - Emergency Medicine
+        - Infectious Disease
+        - General Surgery
+        - Vascular Surgery
+        - Plastic Surgery
+    - name: PGY 2
+      subtext: "Podiatry – 10 months, Plus 1 month each:"
+      children:
+        - Orthopaedic Trauma
+        - Research
+    - name: PGY 3
+      subtext: "Podiatry – 8 months, Plus 1 month each:"
+      children:
+        - Research
+        - Pathology
+        - PMR
+        - Behavioral Science
+
+- program: emergency_medicine
+  items:
+    - name: PGY 1
+      subtext: "Emergency Medicine – "
+      children:
+        -
+    - name: PGY 2
+      subtext: "Emergency Medicine – "
+      children:
+        -
+    - name: PGY 3
+      subtext: "Emergency Medicine – "
+      children:
+        -
+
+- program: psychiatry
+  items:
+    - name: PGY 1
+      children:
+        - 2 months Internal Medicine
+        - 2 months Family Practice Outpatient
+        - 2 months Neurology (Outpatient/Inpatient)
+        - 2 months Psychiatric Emergency Center
+        - 4 Months Adult Inpatient
+
+        - 1 hour/week Psychotherapy Supervision while on service
+        - ½ day/week protected didactics
+
+    - name: PGY 2
+      children:
+        - 3 months Adolescent Inpatient
+        - 3 months Consult/Liaison
+        - 2-3 months Psychiatric Emergency Room
+        - 3-5 months Adult Inpatient
+        - 1 month Substance Abuse
+        - ½ day/week protected didactics
+
+    - name: PGY 3
+      children:
+        - 12 months Outpatient Psychiatry including 2 months Geriatric Psychiatry 1.5 days/week
+        - ½ day/week research
+        - ½ day/week protected didactics
+        - ½ day/week Psychotherapy with weekly supervision
+
+    - name: PGY 4
+      children:
+        - 8-9 months Elective (PHP and Selective rotation at MHMR, ECT,
+        - 3-4 months State Hospital Inpatient
+        - ½  day/week protected didactics
+        - ½  day psychotherapy/week with weekly supervision

@@ -1,0 +1,36 @@
+<!-- Should not be doing this -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<!-- Should not be doing this -->
+
+<div id="carousel-hero" class="carousel slide" data-ride="carousel" data-interval="4000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for slide in include.slides %}
+      {% capture active %}{% if forloop.first == true %}active {% endif %}{% endcapture %}
+      <li data-target="#carousel-hero" data-slide-to="{{ forloop.index0 }}" class="{{ active }}"></li>
+    {% endfor %}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    {% for slide in include.slides %}
+    {% capture active %}{% if forloop.first == true %}active {% endif %}{% endcapture %}
+    <div class="item {{ active }}">
+      <img src="{{ slide.src }}" alt="{{ slide.alt }}">
+      <div class="carousel-caption">
+        {{ slide.caption }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-hero" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-hero" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

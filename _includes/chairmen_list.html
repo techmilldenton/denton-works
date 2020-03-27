@@ -1,0 +1,8 @@
+{% assign chairmen = (site.chairmen | sort: 'order') %}
+{%- for item in chairmen -%}
+	{%- if item.program == page.collection -%}
+	<div class="row">
+		{%- include chairmen_item.html person=item -%}
+	</div>
+	{%- endif -%}
+{%- endfor -%}

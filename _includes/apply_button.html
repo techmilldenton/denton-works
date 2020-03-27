@@ -1,0 +1,34 @@
+
+<hr/>
+
+<div class="row">
+
+  {% if page.program != 'podiatry' %}
+  <div class="col-md-6">
+    <a
+      href="{{ site.era_url }}"
+      class="btn btn-primary btn-lg btn-square text-uppercase center-block"
+      target="_blank"
+      >Connect to ERAS System</a
+    >
+  </div>
+  <div class="col-md-6">
+    <a
+      href="{{ site.vsa_url }}"
+      class="btn btn-success btn-lg btn-square text-uppercase center-block"
+      target="_blank"
+      >Connect to VSAS System</a
+    >
+  </div>
+  {% else %}
+    {% comment %} <div class="col-md-6">
+        <a
+        href="{{ site.era_url }}"
+        class="btn btn-primary btn-lg btn-square text-uppercase center-block"
+        target="_blank"
+        >Connect to ERAS System</a
+        >
+    </div> {% endcomment %}
+  {% endif %}
+
+</div>

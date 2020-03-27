@@ -1,0 +1,28 @@
+<section class="block block-menu-block  clearfix">
+  <div class="block-content">
+    <div class="menu-block-wrapper menu-block menu-name-main-menu">
+      <ul class="menu nav">
+        {% for item in include.nav %}
+        {% capture url %}{% if item.url %}{{ item.url }}{% else %}{{ item }}{% endif %}{% endcapture %}
+        {% capture title %}{% if item.title %}{{ item.title }}{% else %}{{ item }}{% endif %}{% endcapture %}
+        {% capture active %}{% if url == page.url %}active {% endif %}{% endcapture %}
+        {% capture children %}{% if item.children %}expanded {% endif %}{% endcapture %}
+        {% capture first %}{% if forloop.first == true %}first {% endif %}{% endcapture %}
+        {% capture last %}{% if forloop.last == true %}last{% endif %}{% endcapture %}
+
+        {% if title == "obgyn" %}{% assign title = "Obstetrics & Gynecology" %}{% endif %}
+
+        <li class="{{ active }} {{ children }} {{ first }} {{ last }}">
+          <a
+            href="{{ url | prepend: site.baseurl }}"
+            style="text-transform: capitalize;"
+            >{{ title | replace: "_", " " }}</a
+          >
+          {%- if item.children -%} {%- include menu-loop.html
+          items=item.children -%} {%- endif -%}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

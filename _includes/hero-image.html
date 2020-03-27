@@ -1,0 +1,32 @@
+<div class="hero-image">
+	<div class="row">
+		{% if page.hero_type == "banner" %}
+			{% assign hero_src = "/assets/img/doctors.jpg" %}
+			{% if page.hero_src %}
+				{% assign hero_src = page.hero_src %}
+			{% endif %}
+			<img src="{{ hero_src }}" alt="JPS Graduate Program Doctors">
+		{% elsif page.hero_type == "none" %}
+			{% comment %} Load nothing. {% endcomment %}
+		{% else %}
+			{% assign carousel = site.carousel | where: "name", "Default" | first %}
+			{% comment %} If program carousel available, use that. {% endcomment %}
+			{% assign carousel = site.carousel | where: "program", page.collection | first | default: carousel %}
+			{% comment %} Use default slider unless overridden {% endcomment %}
+			{% if carousel == nil or carousel == blank %}
+				{% assign carousel = site.data.slides %}
+			{% endif %}
+
+			{% comment %}
+			If a page has a custom banner assigned, use that.
+			{% endcomment %}
+			{% if page.banner_src != nil and page.banner_src != blank  %}
+				{% assign carousel = site.carousel | where: "name", page.banner_src | first %}
+			{% endif %}
+			{% comment %}
+			Finally, load the carousel.
+			{% endcomment %}
+			{% include carousel.html slides=carousel.slides %}
+		{% endif %}
+	</div>
+</div>

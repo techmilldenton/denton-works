@@ -1,0 +1,19 @@
+---
+layout: jps
+---
+<div id="jpsh-programs">
+	{% include hero-image.html %}
+	{% include sub-hero.html %}
+	{% include program-header.html %}
+	<div class="row">
+		<aside id="program-sidebar" class="col-md-3">
+			<h3 class="mt-0">Program Navigation</h3>
+			{% include menu-block.html nav=site.data.programs %}
+		</aside>
+		<div id="program-content" class="col-md-9">
+			<h4 class="title">{{ page.title }}</h4>
+			{{ content }}
+		</div>
+	</div>
+
+</div>

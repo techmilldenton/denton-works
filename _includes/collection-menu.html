@@ -1,0 +1,22 @@
+{% assign paths = page.url | split: "/" %}
+{% assign collect = paths[1] %}
+{% assign sorted = site[collect] | sort: "order" %}
+
+<section class="block block-menu-block  clearfix">
+	<div class="block-content">
+		<div class="menu-block-wrapper menu-block menu-name-main-menu ">
+			<ul class="menu nav">
+				{% for item in sorted %}
+					{% capture active %}{% if item.url == page.url %}active {% endif %}{% endcapture %}
+					{% capture first %}{% if forloop.first == true %}first {% endif %}{% endcapture %}
+					{% capture last %}{% if forloop.last == true %}last {% endif %}{% endcapture %}
+					{% capture title %}{% if item.nav_title %}{{ item.nav_title }}{% else %}{{ item.title }}{% endif %}{% endcapture %}
+
+					<li class="{{ active }} {{ first }} {{ last }}">
+						<a href="{{ item.url }}">{{ title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

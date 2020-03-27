@@ -1,0 +1,10 @@
+name: Default
+slides:
+  - src: /assets/img/Carousel1.jpg
+    alt: ""
+  - src: /assets/img/Carousel2.jpg
+    alt: ""
+  - src: /assets/img/Carousel3.jpg
+    alt: ""
+  - src: /assets/img/Carousel4.jpg
+    alt: ""

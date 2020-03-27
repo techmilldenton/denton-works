@@ -1,0 +1,15 @@
+{%- for class in site.data.residents -%}
+	{% if class.program == page.collection %}
+		{%- for resident in class.items -%}
+			<div class="border-bars">{{ resident.name }}</div>
+			{%- if resident.children -%}
+      {%- capture columns -%}{%- if resident.children.size > 16 -%}column-count: 2;{%- endif -%}{%- endcapture -%}
+				<ul style="{{ columns }}">
+					{%- for child in resident.children -%}
+						<li>{{ child }}</li>
+					{%- endfor -%}
+				</ul>
+			{%- endif -%}
+		{%- endfor -%}
+	{% endif %}
+{%- endfor -%}

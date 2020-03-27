@@ -1,0 +1,380 @@
+// SCSS for JPSH Programs
+// We will prefix all styles with #jpsh-programs as to not conflict with the rest of the site.
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+
+#jpsh-programs {
+  * {
+    font-family: "Lato", sans-serif;
+  }
+  .glyphicon {
+    font-family: "Glyphicons Halflings";
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: $light-blue;
+    margin: 0 0 2rem;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .color-box {
+    display: inline-block;
+    .color {
+      display: inline-block;
+      height: 5rem;
+      width: 5rem;
+      float: left;
+      &.red {
+        background-color: $red;
+      }
+      &.green {
+        background-color: $green;
+      }
+      &.yellow {
+        background-color: $yellow;
+      }
+      &.light-blue {
+        background-color: $light-blue;
+      }
+      &.dark-blue {
+        background-color: $dark-blue;
+      }
+    }
+  }
+
+  .btn-square {
+    border-radius: 0;
+  }
+  .more-link {
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 10px;
+    &:active,
+    &:hover {
+      text-decoration: none;
+    }
+    &:before {
+      content: "-";
+      position: absolute;
+      left: 0;
+    }
+    &.collapsed {
+      &:before {
+        content: "+";
+      }
+    }
+  }
+
+  .sub-hero {
+    .title {
+      text-transform: uppercase;
+      color: $light-blue;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+  }
+
+  .program-header {
+    padding: 1rem 0 3rem;
+    .title {
+      display: inline-block;
+      font-size: 6rem;
+      font-weight: 400;
+      line-height: 5rem;
+      color: $text-color;
+    }
+    #apply-button {
+      right: 0;
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 10px 40px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  // Menu
+  ul.menu {
+    border-right: 1px solid $light-blue;
+    li {
+      a {
+        color: $text-color;
+        font-size: 1.25rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+      &.active,
+      &:hover {
+        a {
+          color: $light-blue;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    li {
+      &:before {
+        content: "" !important;
+      }
+    }
+  }
+
+  .chair {
+    .chair-info {
+      .chair-title {
+        font-weight: bold;
+        color: $light-blue;
+      }
+      .name {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Content section of pages.
+  #program-content {
+    .title-group {
+      > * {
+        float: left;
+        line-height: 1.5em;
+      }
+      .roster-link {
+        color: $blue;
+        display: inline-block;
+        margin-left: 1em;
+      }
+    }
+
+    @include min-width(md) {
+      padding-right: 6rem;
+    }
+    * {
+      line-height: 1.75em;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 1em;
+      li {
+        list-style: none;
+        &::before {
+          content: "•";
+          color: $blue;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+      &.nav-tabs {
+        li {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      > li > ul {
+        margin-bottom: 0;
+        > li {
+          &::before {
+            content: "-";
+            color: $text-color;
+            width: 0.5em;
+            margin-left: -1em;
+          }
+        }
+      }
+    }
+  }
+  .border-bars {
+    color: $light-blue;
+    text-transform: uppercase;
+    border-top: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    padding: 6px 0;
+    margin-bottom: 10px;
+  }
+
+  .bg-box {
+    background-size: cover;
+    position: relative;
+    .bg-box-top {
+      top: -20px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      width: 560px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .shadow-box {
+    padding: 30px;
+    .shadow-box-internal {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+      right: 80px;
+      background: rgba(255,255,255,0.85);
+      padding: 30px;
+      box-shadow: 0px 12px 16px 0px #464646d9;
+    }
+  }
+
+  #academic-affairs-box {
+    .shadow-box {
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  // Full page overrides.
+  &.academic-affairs-wrapper {
+    .sub-hero {
+      .title {
+        display: none;
+      }
+    }
+    .program-header {
+      .title {
+        color: $blue;
+      }
+      #apply-button {
+        display: none;
+      }
+    }
+    .blue-bg {
+      position: relative;
+      #blue-bg-image {
+        width: 100%;
+        height: auto;
+      }
+      .exec-container {
+        text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+  &.family-medicine-wrapper, &.sports-medicine-wrapper {
+    &.curriculum {
+      table {
+        tr {
+          td {
+            vertical-align: middle;
+            text-align: center;
+            &:nth-child(1) {
+              text-align: left;
+            }
+            &[rowspan] {
+              border: 1px solid $gray-300;
+            }
+          }
+          &.highlight {
+            td + td {
+              background-color: $gray-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Components
+.tab-folder {
+  .nav-tabs {
+    border-bottom: 2px solid $light-blue;
+    border-left: 2px solid $light-blue;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    > li {
+      > a {
+        border-radius: 0 30px 0 0;
+        border-color: $light-blue;
+        border-width: 2px;
+        border-bottom: 0;
+        background-color: $white;
+        color: $text-color;
+        padding: 8px 24px;
+        margin-left: -10px;
+        text-transform: uppercase;
+      }
+      &:first-child {
+        > a {
+          margin-left: 0;
+          border-left: 0 !important;
+        }
+      }
+      &.active,
+      &:focus,
+      &:hover {
+        > a {
+          border-color: $light-blue;
+          border: 2px solid $light-blue;
+          border-bottom: 0;
+          color: $light-blue;
+          z-index: 500 !important;
+        }
+      }
+      $var: 100;
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          > a {
+            z-index: #{$var};
+            $var: $var + 5;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    .tab-pane {
+      background-color: $gray-200;
+      padding: 1em;
+    }
+  }
+}
+
+// Utilities
+.text-uppercase {
+  text-transform: uppercase;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.align-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+// Bootstrap
+.no-gutters > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.no-gutter {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.table-striped-alt > tbody > tr:nth-child(even) {
+  > td,
+  > th {
+    background-color: $gray-200;
+  }
+}

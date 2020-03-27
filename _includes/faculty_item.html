@@ -1,0 +1,24 @@
+{% assign ref = include.person.id | split: "/" | join: "-" | remove_first: "-"
+%}
+<div class="person col-md-12 mb-4 align-bottom">
+  <div class="col-md-3 no-gutter">
+    <img src="{{ include.person.image }}" alt="Staff" class="img-responsive" />
+  </div>
+  <div class="col-md-9">
+    <div class="name">{{ include.person.title }}</div>
+    <div class="department">{{ include.person.department }}</div>
+    <div class="email">
+      <a href="mailto:{{ include.person.email }}">{{ include.person.email }}</a>
+    </div>
+  </div>
+</div>
+{% if include.person.content != "" %}
+<div class="col-md-12 mb-3">
+  <a class="more-link collapsed" data-toggle="collapse" href="#{{ ref }}">
+    More
+  </a>
+</div>
+<div id="{{ ref }}" class="col-md-12 collapse mb-3">
+  {{ include.person.content | markdownify }}
+</div>
+{% endif %}
