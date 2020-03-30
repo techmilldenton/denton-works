@@ -1,0 +1,22 @@
+{% assign post = include.post %}
+{% assign date_month = post.date | date: '%b' %}
+{% assign date_day = post.date | date: '%d' %}
+<article class="blog_item">
+    <div class="blog_item_img">
+        <img class="card-img rounded-0" src="{{ post.image }}" alt="">
+        <a href="#" class="blog_item_date">
+            <h3>{{ date_day }}</h3>
+            <p>{{ date_month }}</p>
+        </a>
+    </div>
+
+    <div class="blog_details">
+        <a class="d-inline-block" href="{{ post.url }}">
+            <h2>{{ post.title }}</h2>
+        </a>
+        <p>{{ post.excerpt }}</p>
+        <ul class="blog-info-link">
+            <li><a href="#"><i class="fa fa-user"></i> {{ post.categories | capitalize | join: ', ' }}</a></li>
+        </ul>
+    </div>
+</article>

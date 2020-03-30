@@ -1,0 +1,9 @@
+{% assign post = include.post %}
+<div class="media post_item">
+    <div class="media-body">
+        <a href="{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+        </a>
+        <p>{{ post.date | date_to_long_string }}</p>
+    </div>
+</div>
