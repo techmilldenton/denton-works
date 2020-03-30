@@ -9,7 +9,7 @@ gem "github-pages"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
-  gem "jekyll-seo"
+  gem 'jekyll-seo-tag'
   gem 'jekyll-environment-variables'
 end
 
