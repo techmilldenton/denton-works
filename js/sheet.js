@@ -11,11 +11,9 @@ function showInfo(data) {
         return Object.assign({}, {"title": key});
     });
     var values = [];
-    data.candidates.elements.forEach(element => {
-        
-    });((el, i) => {
+    data.candidates.elements.forEach((el, i) => {
         console.log(el, i)
-        return Object.values(el);
+        values.push(Object.values(el));
     });
     console.log(keys);
     jQuery('#candidates').DataTable( {
