@@ -1,34 +1,24 @@
 # Config defaults
 baseurl: ''
-exclude: ['README.md']
+exclude: ['README.md', 'readme.txt', 'Gemfile', 'CNAME']
 permalink: pretty
 
 # Site info
-title: 'Jekyll Serif'
+title: 'Denton Works'
 email: info@stokedenton.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-
-  # Collections
-collections:
-  services:
-    output: true
-    permalink: /services/:path/
-  team:
-    output: true
-    permalink: /team/:path/
-  testimonials:
-    output: true
-    permalink: /testimonials/:path/
+description: >-
+  Denton Works is place to connect job seekers and local companies whose work has been impacted by COVID-19.
 
 defaults:
   - scope:
-      type: services
+      path: "" # an empty string here means all files in the project
     values:
-      layout: service
-      bodyClass: page-services-single
+      layout: "default"
+  - scope:
+      type: posts
+    values:
+      layout: post
+      img: /img/blog/default.jpg
   - scope:
       path: 'images'
     values:
@@ -46,13 +36,14 @@ google_analytics: UA-36441409-5
 plugins:
   - jekyll-environment-variables
   - jekyll-feed
-  - jekyll-seo
+  - jekyll-seo-tag
 
 # Build settings
 markdown: kramdown
 theme: minima
 
-# SASS
-sass:
-  sass_dir: ./_scss
-  # style: compressed
+# Google Forms
+sheetUrl: https://docs.google.com/spreadsheets/d/1iCpYHV3MeGKyOlSjih4wFuhysAbEfgENLPpkJCO5jIs
+forms:
+  job_seeker: https://forms.gle/Kerafr72fZ9DxkWAA
+  company_profile: https://forms.gle/ms17aoFJw67n7m356
