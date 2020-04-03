@@ -5,6 +5,7 @@ module.exports = {
     keywords: 'techmill, denton, local, coworking, stoke, gatsby, react',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
   },
+  pathPrefix: '/denton-works',
   plugins: [
     {
       resolve: 'gatsby-source-google-spreadsheets',
