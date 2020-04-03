@@ -25,12 +25,19 @@ const HomepageLink = styled(Link)`
   color: ${colors.brandBlue};
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
 
-  &:hover,
+  /* &:hover,
   &:focus {
     text-decoration: none;
-  }
+  } */
 `
+
+const HeaderLink = ({ to, text }: { to: string; text: string }) => (
+  <HomepageLink to={to} activeStyle={{ color: 'red' }} /* partiallyActive={true} */>
+    {text}
+  </HomepageLink>
+)
 
 interface HeaderProps {
   title: string
@@ -44,10 +51,10 @@ const Header: React.FC<HeaderProps> = () => (
       </Link>
     </LogoWrap>
     <TabsWrap>
-      <HomepageLink to="/">Home</HomepageLink>
-      <HomepageLink to="/job-listing/">Job Listing</HomepageLink>
-      <HomepageLink to="/resources/">Resources</HomepageLink>
-      <HomepageLink to="/contact/">Contact</HomepageLink>
+      <HeaderLink to="/" text="Home" />
+      <HeaderLink to="/job-listing/" text="Job Listing" />
+      <HeaderLink to="/resources/" text="Resources" />
+      <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
   </StyledHeader>
 )
