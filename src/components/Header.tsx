@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 import logo from '../images/denton_works-logo.png'
-import { heights, dimensions, colors } from '../styles/variables'
+import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
 
 const StyledHeader = styled.header`
@@ -19,22 +19,36 @@ const StyledHeader = styled.header`
 
 const LogoWrap = styled(Container)``
 
+const Logo = styled.img`
+  width: 400px;
+`
+
 const TabsWrap = styled(Container)``
+
+const TabButtonWrap = styled(Container)``
 
 const HomepageLink = styled(Link)`
   color: ${colors.brandBlue};
-  font-size: 1.5rem;
-  font-weight: 600;
   cursor: pointer;
+  font-family: ${fonts.serif};
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 12px;
 
-  /* &:hover,
+  &:hover,
   &:focus {
     text-decoration: none;
-  } */
+  }
 `
 
 const HeaderLink = ({ to, text }: { to: string; text: string }) => (
-  <HomepageLink to={to} activeStyle={{ color: 'red' }} /* partiallyActive={true} */>
+  <HomepageLink
+    to={to}
+    activeStyle={{
+      textDecoration: 'underline',
+      textDecorationColor: colors.brandGreen,
+    }} /* partiallyActive={true} */
+  >
     {text}
   </HomepageLink>
 )
@@ -47,7 +61,7 @@ const Header: React.FC<HeaderProps> = () => (
   <StyledHeader>
     <LogoWrap>
       <Link to="/">
-        <img src={logo} alt="denton works" />
+        <Logo src={logo} alt="denton works" />
       </Link>
     </LogoWrap>
     <TabsWrap>
@@ -56,6 +70,10 @@ const Header: React.FC<HeaderProps> = () => (
       <HeaderLink to="/resources/" text="Resources" />
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
+    <TabButtonWrap>
+      <button>Employers</button>
+      <button>Candidates</button>
+    </TabButtonWrap>
   </StyledHeader>
 )
 

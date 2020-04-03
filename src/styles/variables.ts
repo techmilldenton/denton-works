@@ -3,6 +3,7 @@
 export const colors = {
   brand: 'rgb(206,232,219)',
   brandBlue: 'rgb(55,93,158)',
+  brandGreen: 'rgb(64,185,125)',
   lilac: '#9d7cbf',
   accent: '#ffb238',
   success: '#37b635',
@@ -23,9 +24,8 @@ export const colors = {
 }
 
 export const fonts = {
-  sansSerif:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
-  serif: 'Georgia, "Times New Roman", Times, serif',
+  sansSerif: '"Lato", sans-serif',
+  serif: '"Zilla Slab", serif',
   monospace: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace',
 }
 
