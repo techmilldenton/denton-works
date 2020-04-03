@@ -7,7 +7,7 @@ import { colors } from '../styles/variables'
 const StyledLayoutRoot = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 `
 
 const globalStyles = css`
@@ -16,6 +16,15 @@ const globalStyles = css`
   body {
     background: ${colors.brand};
   }
+
+  .___gatsby {
+    overflow: scroll;
+  }
+`
+
+const BottomBar = styled.div`
+  background-color: ${colors.brandBlue};
+  height: 5rem;
 `
 
 interface LayoutRootProps {
@@ -26,6 +35,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
   <>
     <Global styles={globalStyles} />
     <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
+    <BottomBar />
   </>
 )
 

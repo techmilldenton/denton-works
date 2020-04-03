@@ -14,13 +14,16 @@ const slogan = 'Connecting employers and job seekers in the Denton community'
 
 const Slogan = styled.div`
   font-family: ${fonts.serif};
-  font-size: ${headingSizes.h1}rem;
+  font-size: ${headingSizes.super}rem;
+  font-weight: 600;
+  color: ${colors.brandBlue};
 `
 
-const info = 'Find or list full-time, part-time, or project-based work available now.'
+const info = 'Find or list full-time, part-time,\n or project-based work available now.'
 
 const Info = styled.div`
-  font-size: ${headingSizes.h2}rem;
+  font-size: ${headingSizes.h3}rem;
+  color: ${colors.gray.calm};
 `
 
 const Copy = styled.div`
@@ -29,21 +32,24 @@ const Copy = styled.div`
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 30px;
-  max-width: 600px;
+  max-width: 36rem;
+  max-height: 22rem;
 
   @media screen {
     margin-top: 5rem;
-    margin-left: 5rem;
+    margin-left: calc(15vw - 4rem);
   }
 `
 
 const Inner = styled.div`
-  /* display: flex;
+  background-image: url(${background});
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
   flex-direction: row;
-
-  @media screen {
-    max-width: 40%;
-  } */
+  flex-grow: 1;
 `
 
 const CallToAction = styled.div`
@@ -71,11 +77,10 @@ const IndexPage = () => (
   <IndexLayout>
     <Page
       css={css`
-        background-image: url(${background});
-        background-origin: border-box;
-        background-repeat: no-repeat;
-        background-size: 50vw;
-        background-position-x: right;
+        padding: 0;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
       `}
     >
       <Inner>
