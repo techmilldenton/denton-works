@@ -1,6 +1,19 @@
 'use strict'
 
 const path = require('path')
+const fs = require('fs')
+
+exports.onPreInit = () => {
+  if (process.argv[2] === 'build') {
+    fs.rmdirSync(path.join(__dirname, 'docs'), { recursive: true })
+    fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'public_dev'))
+  }
+}
+
+exports.onPostBuild = () => {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'docs'))
+  fs.renameSync(path.join(__dirname, 'public_dev'), path.join(__dirname, 'public'))
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -25,14 +38,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: slug || ''
+        value: slug || '',
       })
 
       // Used to determine a page layout.
       createNodeField({
         node,
         name: 'layout',
-        value: layout || ''
+        value: layout || '',
       })
     }
   }
@@ -78,8 +91,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
-        slug
-      }
+        slug,
+      },
     })
   })
 }
