@@ -18,17 +18,9 @@ const cnamePath = './public/CNAME'
 // }
 
 exports.onPostBuild = () => {
-  fs.open(cnamePath, 'w', (err, fd) => {
+  fs.writeFileSync(cnamePath, Buffer.from('www.denton.works'), err => {
     if (err) throw err
-
-    fs.write(fd, Buffer.from('www.denton.works'), err => {
-      if (err) throw err
-      console.log('created cname file')
-    })
-
-    fs.close(fd, err => {
-      if (err) throw err
-    })
+    console.log('created cname file')
   })
 }
 
