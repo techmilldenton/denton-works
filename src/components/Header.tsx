@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = () => (
     </LogoWrap>
     <TabsWrap>
       <HeaderLink to="/" text="Home" />
-      <HeaderLink to="/job-listing/" text="Job Listing" />
+      <HeaderLink to="/job-seekers/" text="Job Seekers" />
       <HeaderLink to="/resources/" text="Resources" />
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>

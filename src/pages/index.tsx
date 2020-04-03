@@ -8,7 +8,7 @@ import IndexLayout from '../layouts'
 import styled from '@emotion/styled'
 import { fonts, dimensions } from '../styles/variables'
 
-const { headingSizes, fontSize } = dimensions
+const { headingSizes } = dimensions
 
 const slogan = 'Connecting employers and job seekers in the Denton community'
 
