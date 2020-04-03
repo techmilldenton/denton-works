@@ -30,7 +30,7 @@ const TabButtonWrap = styled(Container)``
 const HomepageLink = styled(Link)`
   color: ${colors.brandBlue};
   cursor: pointer;
-  font-family: ${fonts.serif};
+  font-family: ${fonts.sansSerif};
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 12px;
