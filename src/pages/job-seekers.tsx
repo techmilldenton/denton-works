@@ -22,7 +22,7 @@ interface CandidateQuery {
         timestamp: string
         typeofworkcontractorparttimefulltimegig: string
       }[]
-    }
+    }[]
   }
 }
 
@@ -49,12 +49,21 @@ export default () => {
       }
     }
   `)
+  const nodes = data.allGoogleSheet.nodes
   return (
     <IndexLayout>
       <Page>
         <Container>
           <h1>Job Seekers</h1>
-          {JSON.stringify(data)}
+          {nodes.map(n =>
+            n.candidates.map(c => (
+              <div key={c.id}>
+                {c.firstname}
+                <br />
+                {c.id}
+              </div>
+            ))
+          )}
         </Container>
       </Page>
     </IndexLayout>

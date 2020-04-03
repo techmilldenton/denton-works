@@ -9,7 +9,6 @@ const StyledPage = styled.div`
   font-family: ${fonts.sansSerif};
   position: relative;
   padding: ${dimensions.containerPadding}rem;
-  margin-bottom: 3rem;
 `
 
 interface PageProps {

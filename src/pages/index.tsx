@@ -1,11 +1,12 @@
 import * as React from 'react'
 
-import image from '../images/denton_works-illustration1.png'
+import background from '../images/denton_works-illustration1.png'
 
 import Page from '../components/Page'
 import IndexLayout from '../layouts'
 import styled from '@emotion/styled'
 import { fonts, dimensions, colors } from '../styles/variables'
+import { css } from '@emotion/core'
 
 const { headingSizes } = dimensions
 
@@ -23,13 +24,26 @@ const Info = styled.div`
 `
 
 const Copy = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+  max-width: 600px;
+
+  @media screen {
+    margin-top: 5rem;
+    margin-left: 5rem;
+  }
 `
 
 const Inner = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: row;
+
+  @media screen {
+    max-width: 40%;
+  } */
 `
 
 const CallToAction = styled.div`
@@ -41,7 +55,7 @@ const CallToAction = styled.div`
   font-size: ${headingSizes.h3}rem;
   height: 80px;
   justify-content: center;
-  padding: 12px;
+  padding: 1.5rem;
 
   &:first-of-type {
     margin-right: 12px;
@@ -55,7 +69,15 @@ const CallToActionWrap = styled.div`
 
 const IndexPage = () => (
   <IndexLayout>
-    <Page>
+    <Page
+      css={css`
+        background-image: url(${background});
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        background-size: 50vw;
+        background-position-x: right;
+      `}
+    >
       <Inner>
         <Copy>
           <Slogan>{slogan}</Slogan>
@@ -65,9 +87,9 @@ const IndexPage = () => (
             <CallToAction>Upload Your Qualifications</CallToAction>
           </CallToActionWrap>
         </Copy>
-        <div>
+        {/* <div>
           <img src={image} alt="denton works" />
-        </div>
+        </div> */}
       </Inner>
     </Page>
   </IndexLayout>

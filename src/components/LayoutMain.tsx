@@ -1,7 +1,9 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { colors } from '../styles/variables'
 
 const StyledLayoutMain = styled.main`
+  background: ${colors.white};
   display: flex;
   flex-direction: column;
   flex: 1;
