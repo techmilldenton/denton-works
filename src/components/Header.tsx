@@ -7,6 +7,8 @@ import logo from '../images/denton_works-logo.png'
 import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
 
+const { headingSizes } = dimensions
+
 const StyledHeader = styled.header`
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
@@ -25,7 +27,10 @@ const Logo = styled.img`
 
 const TabsWrap = styled(Container)``
 
-const TabButtonWrap = styled(Container)``
+const TabButtonWrap = styled(Container)`
+  display: flex;
+  flex-direction: row;
+`
 
 const HomepageLink = styled(Link)`
   color: ${colors.brandBlue};
@@ -53,6 +58,22 @@ const HeaderLink = ({ to, text }: { to: string; text: string }) => (
   </HomepageLink>
 )
 
+const SubButtons = styled.div`
+  align-items: center;
+  background-color: ${colors.white};
+  border-radius: 12px;
+  color: ${colors.brandGreen};
+  display: flex;
+  font-size: ${headingSizes.h4}rem;
+  height: 30px;
+  justify-content: center;
+  padding: 12px;
+
+  &:first-of-type {
+    margin-right: 12px;
+  }
+`
+
 interface HeaderProps {
   title: string
 }
@@ -71,8 +92,8 @@ const Header: React.FC<HeaderProps> = () => (
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
     <TabButtonWrap>
-      <button>Employers</button>
-      <button>Candidates</button>
+      <SubButtons>Employers</SubButtons>
+      <SubButtons>Candidates</SubButtons>
     </TabButtonWrap>
   </StyledHeader>
 )

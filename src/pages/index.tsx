@@ -6,9 +6,9 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import styled from '@emotion/styled'
-import { fonts, dimensions } from '../styles/variables'
+import { fonts, dimensions, colors } from '../styles/variables'
 
-const { headingSizes } = dimensions
+const { headingSizes, fontSize } = dimensions
 
 const slogan = 'Connecting employers and job seekers in the Denton community'
 
@@ -33,20 +33,43 @@ const Inner = styled.div`
   flex-direction: row;
 `
 
+const CallToAction = styled.div`
+  align-items: center;
+  background-color: ${colors.brandGreen};
+  border-radius: 12px;
+  color: ${colors.white};
+  display: flex;
+  font-size: ${headingSizes.h3}rem;
+  height: 80px;
+  justify-content: center;
+  padding: 12px;
+
+  &:first-of-type {
+    margin-right: 12px;
+  }
+`
+
+const CallToActionWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 const IndexPage = () => (
   <IndexLayout>
     <Page>
-      <Container>
-        <Inner>
-          <Copy>
-            <Slogan>{slogan}</Slogan>
-            <Info>{info}</Info>
-          </Copy>
-          <div>
-            <img src={image} alt="denton works" />
-          </div>
-        </Inner>
-      </Container>
+      <Inner>
+        <Copy>
+          <Slogan>{slogan}</Slogan>
+          <Info>{info}</Info>
+          <CallToActionWrap>
+            <CallToAction>Post a Job</CallToAction>
+            <CallToAction>Upload Your Qualifications</CallToAction>
+          </CallToActionWrap>
+        </Copy>
+        <div>
+          <img src={image} alt="denton works" />
+        </div>
+      </Inner>
     </Page>
   </IndexLayout>
 )
