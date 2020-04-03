@@ -1,12 +1,14 @@
 import * as React from 'react'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import background from '../images/denton_works-illustration1.png'
 
 import Page from '../components/Page'
 import IndexLayout from '../layouts'
-import styled from '@emotion/styled'
 import { fonts, dimensions, colors } from '../styles/variables'
-import { css } from '@emotion/core'
+import { companyProfileUrl, jobSeekerFormUrl } from '../constants'
+import { noUnderline } from '../styles/mixins'
 
 const { headingSizes } = dimensions
 
@@ -44,7 +46,7 @@ const Copy = styled.div`
 const Inner = styled.div`
   background-image: url(${background});
   background-position-x: right;
-  background-position-y: bottom;
+  background-position-y: 2rem;
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -52,7 +54,8 @@ const Inner = styled.div`
   flex-grow: 1;
 `
 
-const CallToAction = styled.div`
+const CallToAction = styled.a`
+  ${noUnderline}
   align-items: center;
   background-color: ${colors.brandGreen};
   border-radius: 12px;
@@ -88,8 +91,8 @@ const IndexPage = () => (
           <Slogan>{slogan}</Slogan>
           <Info>{info}</Info>
           <CallToActionWrap>
-            <CallToAction>Post a Job</CallToAction>
-            <CallToAction>Upload Your Qualifications</CallToAction>
+            <CallToAction href={companyProfileUrl}>Post a Job</CallToAction>
+            <CallToAction href={jobSeekerFormUrl}>Upload Your Qualifications</CallToAction>
           </CallToActionWrap>
         </Copy>
         {/* <div>

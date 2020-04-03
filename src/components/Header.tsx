@@ -6,6 +6,8 @@ import { Link } from 'gatsby'
 import logo from '../images/denton_works-logo.png'
 import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
+import { companyProfileUrl, jobSeekerFormUrl } from '../constants'
+import { noUnderline } from '../styles/mixins'
 
 const { headingSizes } = dimensions
 
@@ -33,17 +35,13 @@ const TabButtonWrap = styled(Container)`
 `
 
 const HomepageLink = styled(Link)`
+  ${noUnderline}
   color: ${colors.brandBlue};
   cursor: pointer;
   font-family: ${fonts.sansSerif};
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 12px;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 `
 
 const HeaderLink = ({ to, text }: { to: string; text: string }) => (
@@ -58,7 +56,8 @@ const HeaderLink = ({ to, text }: { to: string; text: string }) => (
   </HomepageLink>
 )
 
-const SubButtons = styled.div`
+const SubButtons = styled.a`
+  ${noUnderline}
   align-items: center;
   background-color: ${colors.white};
   border-radius: 12px;
@@ -92,8 +91,8 @@ const Header: React.FC<HeaderProps> = () => (
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
     <TabButtonWrap>
-      <SubButtons>Employers</SubButtons>
-      <SubButtons>Candidates</SubButtons>
+      <SubButtons href={companyProfileUrl}>Employers</SubButtons>
+      <SubButtons href={jobSeekerFormUrl}>Candidates</SubButtons>
     </TabButtonWrap>
   </StyledHeader>
 )
