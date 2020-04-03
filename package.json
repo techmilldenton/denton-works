@@ -16,7 +16,7 @@
     "build": "gatsby build",
     "clean": "rimraf public",
     "clear-cache": "rimraf ./.cache/*",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d docs",
+    "deploy": "gatsby build gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
