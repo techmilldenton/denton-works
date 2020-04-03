@@ -1,7 +1,9 @@
 'use strict'
 
 const path = require('path')
-// const fs = require('fs')
+const fs = require('fs')
+
+const cnamePath = './public/CNAME'
 
 // exports.onPreInit = () => {
 //   if (process.argv[2] === 'build') {
@@ -14,6 +16,21 @@ const path = require('path')
 //   fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'docs'))
 //   fs.renameSync(path.join(__dirname, 'public_dev'), path.join(__dirname, 'public'))
 // }
+
+exports.onPostBuild = () => {
+  fs.open(cnamePath, 'w', (err, fd) => {
+    if (err) throw err
+
+    fs.write(fd, Buffer.from('www.denton.works'), err => {
+      if (err) throw err
+      console.log('created cname file')
+    })
+
+    fs.close(fd, err => {
+      if (err) throw err
+    })
+  })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
