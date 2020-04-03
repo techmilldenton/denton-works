@@ -14,14 +14,15 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "build:deploy": "yarn build && yarn deploy",
     "clean": "rimraf public",
     "clear-cache": "rimraf ./.cache/*",
-    "deploy": "gatsby build gh-pages -d public",
+    "deploy": "gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
+    "start": "yarn dev",
+    "test": "yarn type-check && yarn lint",
     "type-check": "tsc"
   },
   "engines": {
