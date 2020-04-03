@@ -3,7 +3,7 @@ module.exports = {
     title: 'denton.works',
     description: 'A hub for connecting local talent with local businesses.',
     keywords: 'techmill, denton, local, coworking, stoke, gatsby, react',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    siteUrl: 'https://www.denton.works',
   },
   plugins: [
     {
