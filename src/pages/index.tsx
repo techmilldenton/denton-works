@@ -7,7 +7,7 @@ import background from '../images/denton_works-illustration1.png'
 import Page from '../components/Page'
 import IndexLayout from '../layouts'
 import { fonts, dimensions, colors } from '../styles/variables'
-import { companyProfileUrl, jobSeekerFormUrl } from '../constants'
+import { companyFormUrl, jobSeekerFormUrl } from '../constants'
 import { noUnderline } from '../styles/mixins'
 
 const { headingSizes } = dimensions
@@ -91,8 +91,12 @@ const IndexPage = () => (
           <Slogan>{slogan}</Slogan>
           <Info>{info}</Info>
           <CallToActionWrap>
-            <CallToAction href={companyProfileUrl}>Post a Job</CallToAction>
-            <CallToAction href={jobSeekerFormUrl}>Upload Your Qualifications</CallToAction>
+            <CallToAction href={companyFormUrl} target="blank">
+              Post a Job
+            </CallToAction>
+            <CallToAction href={jobSeekerFormUrl} target="blank">
+              Upload Your Qualifications
+            </CallToAction>
           </CallToActionWrap>
         </Copy>
         {/* <div>

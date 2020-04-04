@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import logo from '../images/denton_works-logo.png'
 import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
-import { companyProfileUrl, jobSeekerFormUrl } from '../constants'
+import { companyFormUrl, jobSeekerFormUrl } from '../constants'
 import { noUnderline } from '../styles/mixins'
 
 const { headingSizes } = dimensions
@@ -87,12 +87,17 @@ const Header: React.FC<HeaderProps> = () => (
     <TabsWrap>
       <HeaderLink to="/" text="Home" />
       <HeaderLink to="/job-seekers/" text="Job Seekers" />
+      <HeaderLink to="/jobs/" text="Jobs" />
       <HeaderLink to="/resources/" text="Resources" />
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
     <TabButtonWrap>
-      <SubButtons href={companyProfileUrl}>Employers</SubButtons>
-      <SubButtons href={jobSeekerFormUrl}>Candidates</SubButtons>
+      <SubButtons href={companyFormUrl} target="blank">
+        Employers
+      </SubButtons>
+      <SubButtons href={jobSeekerFormUrl} target="blank">
+        Candidates
+      </SubButtons>
     </TabButtonWrap>
   </StyledHeader>
 )
