@@ -49,6 +49,7 @@ export const dimensions = {
     large: 18,
   },
   headingSizes: {
+    super: 3.333,
     h1: 2.441,
     h2: 1.953,
     h3: 1.563,

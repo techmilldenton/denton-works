@@ -6,6 +6,10 @@ import { Link } from 'gatsby'
 import logo from '../images/denton_works-logo.png'
 import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
+import { companyFormUrl, jobSeekerFormUrl } from '../constants'
+import { noUnderline } from '../styles/mixins'
+
+const { headingSizes } = dimensions
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
@@ -25,20 +29,19 @@ const Logo = styled.img`
 
 const TabsWrap = styled(Container)``
 
-const TabButtonWrap = styled(Container)``
+const TabButtonWrap = styled(Container)`
+  display: flex;
+  flex-direction: row;
+`
 
 const HomepageLink = styled(Link)`
+  ${noUnderline}
   color: ${colors.brandBlue};
   cursor: pointer;
   font-family: ${fonts.sansSerif};
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 12px;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 `
 
 const HeaderLink = ({ to, text }: { to: string; text: string }) => (
@@ -53,6 +56,23 @@ const HeaderLink = ({ to, text }: { to: string; text: string }) => (
   </HomepageLink>
 )
 
+const SubButtons = styled.a`
+  ${noUnderline}
+  align-items: center;
+  background-color: ${colors.white};
+  border-radius: 12px;
+  color: ${colors.brandGreen};
+  display: flex;
+  font-size: ${headingSizes.h4}rem;
+  height: 30px;
+  justify-content: center;
+  padding: 12px;
+
+  &:first-of-type {
+    margin-right: 12px;
+  }
+`
+
 interface HeaderProps {
   title: string
 }
@@ -66,13 +86,18 @@ const Header: React.FC<HeaderProps> = () => (
     </LogoWrap>
     <TabsWrap>
       <HeaderLink to="/" text="Home" />
-      <HeaderLink to="/job-listing/" text="Job Listing" />
+      <HeaderLink to="/job-seekers/" text="Job Seekers" />
+      <HeaderLink to="/jobs/" text="Jobs" />
       <HeaderLink to="/resources/" text="Resources" />
       <HeaderLink to="/contact/" text="Contact" />
     </TabsWrap>
     <TabButtonWrap>
-      <button>Employers</button>
-      <button>Candidates</button>
+      <SubButtons href={companyFormUrl} target="blank">
+        Employers
+      </SubButtons>
+      <SubButtons href={jobSeekerFormUrl} target="blank">
+        Candidates
+      </SubButtons>
     </TabButtonWrap>
   </StyledHeader>
 )

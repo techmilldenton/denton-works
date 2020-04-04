@@ -5,6 +5,7 @@ module.exports = {
     keywords: 'techmill, denton, local, coworking, stoke, gatsby, react',
     siteUrl: 'https://www.denton.works',
   },
+  pathPrefix: '/denton-works',
   plugins: [
     {
       resolve: 'gatsby-source-google-spreadsheets',
