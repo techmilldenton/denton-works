@@ -1,9 +1,11 @@
-import React, { FC } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
-import { useStaticQuery, graphql } from 'gatsby'
+import { sheetId } from '../constants'
+import { getData } from '../getSheets'
+import { fromEntries } from '../utils'
 
 type Job = {
   id: string
@@ -17,60 +19,53 @@ type Job = {
   jobtitle: string
   jobdescription: string
   typeofwork: string
-  parent: string
 }
 
-interface JobQuery {
-  allGoogleJobsSheet: {
-    nodes: Array<Job>
-  }
-}
+type Jobs = Array<Array<[string, string]>>
 
-const Job: FC<Job> = j => (
-  <div key={j.id}>
-    <p>address: {j.address}</p>
-    <p>companyname: {j.companyname}</p>
-    <p>dentonchamberofcommercemember: {j.dentonchamberofcommercemember}</p>
-    <p>emailaddress: {j.emailaddress}</p>
-    <p>id: {j.id}</p>
-    <p>jobdescription: {j.jobdescription}</p>
-    <p>jobtitle: {j.jobtitle}</p>
-    <p>phonenumber: {j.phonenumber}</p>
-    <p>timestamp: {j.timestamp}</p>
-    <p>typeofwork: {j.typeofwork}</p>
-    <p>websiteurl: {j.websiteurl}</p>
+const renderJob = (j: Job, key: number) => (
+  <div key={key}>
+    <div>Name: {j.companyname}</div>
+    <div>Address: {j.address}</div>
+    <div>Email: {j.emailaddress}</div>
+    <div>Description: {j.jobdescription}</div>
+    {j.dentonchamberofcommercemember && <div>Chamber: ✅</div>}
+    <div>Job Title: {j.jobtitle}</div>
+    <div>Phone: {j.phonenumber ? j.phonenumber : <>No ☎️ Provided!</>}</div>
+    {/* <div>timestamp: {j.timestamp}</div> */}
+    <div>Type of Work: {j.typeofwork}</div>
+    {j.websiteurl && (
+      <div>
+        Website: <a href={j.websiteurl}>{j.websiteurl}</a>
+      </div>
+    )}
+    <br />
+    <br />
   </div>
 )
 
 export default () => {
-  const data: JobQuery = useStaticQuery(graphql`
-    query Jobs {
-      allGoogleJobsSheet {
-        nodes {
-          address
-          companyname
-          dentonchamberofcommercemember
-          emailaddress
-          id
-          jobdescription
-          jobtitle
-          phonenumber
-          timestamp
-          typeofwork
-          websiteurl
-        }
-      }
-    }
-  `)
+  const [jobs, setJobs] = useState<Jobs>([])
 
-  const { nodes } = data.allGoogleJobsSheet
+  useEffect(() => {
+    // jobs.map(j => j.map(s => s))
+    getData(sheetId, o => {
+      o.forEach(e => {
+        if (e.title === 'jobs') {
+          setJobs(e.entries)
+        }
+      })
+    })
+  }, [])
 
   return (
     <IndexLayout>
       <Page>
         <h1>Jobs</h1>
-        <Container>{nodes.map(Job)}</Container>
+        {/* {JSON.stringify(jobs)} */}
+        <Container>{jobs.map((j, i) => renderJob(fromEntries(j as never) as Job, i))}</Container>
       </Page>
+      s
     </IndexLayout>
   )
 }
