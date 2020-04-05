@@ -32,6 +32,7 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "@types/prismjs": "^1.16.0",
+    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-google-spreadsheets": "^2.4.1",
