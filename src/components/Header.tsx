@@ -77,7 +77,7 @@ interface HeaderProps {
   title: string
 }
 
-const Header: React.FC<HeaderProps> = () => (
+export const Header: React.FC<HeaderProps> = () => (
   <StyledHeader>
     <LogoWrap>
       <Link to="/">

@@ -35,7 +35,7 @@ interface LayoutRootProps {
   className?: string
 }
 
-const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
+export const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
   <>
     <Global styles={globalStyles} />
     <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
