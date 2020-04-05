@@ -17,6 +17,10 @@ const globalStyles = css`
     background: ${colors.brand};
   }
 
+  a {
+    color: ${colors.brandBlue};
+  }
+
   .___gatsby {
     overflow: scroll;
   }
