@@ -19,6 +19,13 @@ const Slogan = styled.div`
   font-size: ${headingSizes.super}rem;
   font-weight: 600;
   color: ${colors.brandBlue};
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    font-size: 2.2rem;
+  }
 `
 
 const info = 'Find or list full-time, part-time,\n or project-based work available now.'
@@ -41,6 +48,14 @@ const Copy = styled.div`
     margin-top: 5rem;
     margin-left: calc(15vw - 4rem);
   }
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    padding: 2rem 1rem;
+    margin: 0;
+  }
 `
 
 const Inner = styled.div`
@@ -52,6 +67,13 @@ const Inner = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    background: none;
+  }
 `
 
 const CallToAction = styled.a`
@@ -65,9 +87,17 @@ const CallToAction = styled.a`
   height: 80px;
   justify-content: center;
   padding: 1.5rem;
+  text-align: center;
 
   &:first-of-type {
     margin-right: 12px;
+  }
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    font-size: 1.3rem;
   }
 `
 
@@ -99,9 +129,6 @@ const IndexPage = () => (
             </CallToAction>
           </CallToActionWrap>
         </Copy>
-        {/* <div>
-          <img src={image} alt="denton works" />
-        </div> */}
       </Inner>
     </Page>
   </IndexLayout>

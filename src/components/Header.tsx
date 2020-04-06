@@ -19,6 +19,15 @@ const StyledHeader = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 `
 
 const LogoWrap = styled(Container)``
@@ -42,6 +51,14 @@ const HomepageLink = styled(Link)`
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 12px;
+
+  /**
+   * iPhone X break
+   */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    font-size: 1rem;
+    margin: 0 4px;
+  }
 `
 
 const HeaderLink = ({ to, text }: { to: string; text: string }) => (
