@@ -1,94 +1,81 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="www.denton.works">
+    <img alt="Denton.Works" src="https://user-images.githubusercontent.com/6667096/78514034-eb8cb400-7774-11ea-8177-bd1c5a9ff287.png" width="300" />
   </a>
 </p>
-<h1 align="center">
-  gatsby-starter-typescript-plus
-</h1>
 
-> A starter kit for TypeScript-based Gatsby projects with sensible defaults.
+- [What is this?](#what-is-this)
+  - [Tech stack](#tech-stack)
+- [Get started](#get-started)
+- [FAQ](#faq)
+- [<g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">❤️</g-emoji> Credits](#️-credits)
 
-This is a starter kit for [Gatsby.js](https://www.gatsbyjs.org/) websites written in TypeScript. It includes the bare essentials for you to get started (styling, Markdown parsing, minimal toolset).
+## What is this?
 
-## 🗒️ Features
+A community project. A website for jobs and job seekers.
+
+### Tech stack
+
+This app was built with [Gatsby.js](https://www.gatsbyjs.org/), and bootstrapped with [gatsby-starter-typescript-plus](https://github.com/resir014/gatsby-starter-typescript-plus).
+
+Check out the `package.json` file to see a list of depedencies.
+
+Here's a partial list:
 
 - TypeScript
 - ESLint (with custom ESLint rules)
 - Markdown rendering with Remark
-- Basic component structure
 - Styling with [emotion](https://emotion.sh/)
+- GH-pages for deployment/hosting
+- A small hand-rolled library for fetching data from Google Sheets
 
-## 🚀 Quick start
+## Get started
 
-> A nodejs >= 6.0.0 setup with [yarn](https://yarnpkg.com/) is recommended.
+Requirements:
 
-1.  **Create a Gatsby site.**
+- Node -- We've tested with v12 and v13, anything >= v6 should work.
+- Yarn -- You may use NPM, but it's not tested
 
-    Install `gatsby-cli` package globally on your machine.
+Install dependencies:
 
-    ```bash
-    # using NPM
-    npm install -g gatsby-cli
+- `yarn install`
 
-    # using YARN
-    yarn global add gatsby-cli
-    ```
+Develop:
 
-    Use the `gatsby-cli` to create a new site and install its dependencies.
+- `yarn dev`
 
-    ```bash
-    gatsby new project-name https://github.com/resir014/gatsby-starter-typescript-plus
-    ```
+Build:
 
-2.  **Start developing.**
+- `yarn build`
 
-    Move to project's directory.
+Deploy:
 
-    ```bash
-    cd project-name/
-    ```
+- `yarn deploy`
 
-    Start your site.
+Build and deploy:
 
-    ```bash
-    # using npm
-    npm start
+- `yarn build:deploy`
 
-    # using yarn
-    yarn start
-    ```
+Clean cache
 
-    Open source code using your favorite IDE/Text editor and navigate to `src/` directory, this is where your application live.
+- `yarn clean-cache`
 
-3.  **Build your application for production.**
+Clean artifacts
 
-    Once you're finished, you can make production build of your app using:
+- `yarn clean`
 
-    ```bash
-    # using npm
-    npm run build
+## FAQ
 
-    # using yarn
-    yarn build
-    ```
+- Can I use this for my city?
+  Yes!
 
-4.  **Deploy your app to Github pages!**
+- What license are you using?
+  MIT
 
-    After building your application in step 3, you're ready to publish your app and go online!
-
-    ```bash
-    # using npm
-    npm run deploy
-
-    # using yarn
-    yarn deploy
-    ```
+---
 
 ## ❤️ Credits
 
 Built with [Gatsby](https://www.gatsbyjs.org/) - the blazing-fast static site generator for [React](https://facebook.github.io/react/).
 
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/resir014/gatsby-starter-typescript-plus)
+Bootstrapped using [gatsby-starter-typescript-plus](https://github.com/resir014/gatsby-starter-typescript-plus).

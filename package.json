@@ -16,7 +16,7 @@
     "build": "gatsby build",
     "build:deploy": "yarn build && yarn deploy",
     "clean": "rimraf public",
-    "clear-cache": "rimraf ./.cache/*",
+    "clean-cache": "rimraf ./.cache/*",
     "deploy": "gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
