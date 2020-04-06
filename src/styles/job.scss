@@ -1,0 +1,121 @@
+$green: #489f5b;
+$orange: #eea674;
+$blue: #3f5e9a;
+
+$font-family-sans: 'Lato', sans-serif;
+$font-family-sans-serif: 'Zilla Slab', serif;
+
+* {
+  font-family: $font-family-sans;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-sans-serif;
+}
+
+.job {
+  margin: 1em;
+  border: 2px solid rgb(206, 232, 219);
+  border-radius: 4px;
+  max-width: 800px;
+  .top {
+    background: #dedede;
+    padding: 0.5em;
+    clear: both;
+    overflow: auto;
+    font-size: 14px;
+    > * {
+      float: left;
+    }
+    .time {
+      width: 40%;
+    }
+    .category {
+      width: 60%;
+      text-align: right;
+    }
+  }
+  .middle {
+    [class^='col'] {
+      padding: 0.5em 1em;
+      float: left;
+      box-sizing: border-box;
+    }
+    .col-left {
+      width: 70%;
+    }
+    .col-right {
+      width: 30%;
+      text-align: center;
+      > * {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 8px 10px;
+    background: $blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    &:hover {
+      background: lighten($blue, 10);
+    }
+    &.alt {
+      background: none;
+      color: initial;
+      border: 1px solid #dedede;
+    }
+  }
+
+  .bottom {
+    border-top: 1px solid #dedede;
+    clear: both;
+    overflow: auto;
+    padding: 1em;
+    font-size: 14px;
+  }
+  .title {
+    font-size: 20px;
+    margin: 0 auto 0.5em;
+    .type {
+      display: inline-block;
+      text-transform: uppercase;
+      background-color: $green;
+      padding: 3px 5px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: white;
+      margin-left: 1em;
+    }
+  }
+  .company {
+    float: left;
+    .name {
+      font-weight: bold;
+      float: left;
+    }
+    .links {
+      margin-left: 10px;
+      float: left;
+    }
+    .coc {
+      display: inline-block;
+      margin-left: 5px;
+      img,
+      svg {
+        height: 100%;
+        max-height: 15px;
+      }
+    }
+  }
+  .address {
+    text-align: right;
+  }
+}
