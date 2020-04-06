@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import TimeAgo from 'react-timeago'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -12,7 +13,9 @@ import '../styles/job.scss'
 const renderJob = (j: Job, key: number) => (
   <div key={key} className={'job job-' + key}>
     <div className="top">
-      <div className="time">added {j.timestamp} ago</div>
+      <div className="time">
+        <TimeAgo date={j.timestamp} />
+      </div>
       <div className="category">{j.jobcategory}</div>
     </div>
     <div className="middle">
