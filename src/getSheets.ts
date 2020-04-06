@@ -73,7 +73,7 @@ export const getData = (
       entries: [string, string][][]
     }[]
   ) => void,
-  onFailure: (e: Error) => void
+  onFailure?: (e: Error) => void
 ) =>
   axios
     .get(buildIndexUrl(key))
@@ -114,7 +114,10 @@ export const getData = (
     })
     .catch((e: Error) => {
       console.error(e)
-      onFailure(e)
+
+      if (onFailure) {
+        onFailure(e)
+      }
     })
 
 /**

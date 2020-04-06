@@ -1,11 +1,65 @@
-import React, { FC } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
-import { useStaticQuery, graphql } from 'gatsby'
+import { sheetId } from '../constants'
+import { getData } from '../getSheets'
+import { fromEntries } from '../utils'
+import { Loader } from '../components/Loader'
 
-type Candidate = {
+const renderSeeker = (s: Seeker, key: number) => (
+  <div key={key}>
+    <div>describeyourskills: {s.describeyourskills}</div>
+    <div>emailaddress: {s.emailaddress}</div>
+    <div>firstname: {s.firstname}</div>
+    <div>id: {s.id}</div>
+    <div>jobtitle: {s.jobtitle}</div>
+    <div>lastname: {s.lastname}</div>
+    <div>linkedinorportfoliourl: {s.linkedinorportfoliourl}</div>
+    <div>phonenumber: {s.phonenumber}</div>
+    <div>resumelink: {s.resumelink}</div>
+    <div>skills: {s.skills}</div>
+    <div>timestamp: {s.timestamp}</div>
+    <div>typeofworkcontractorparttimefulltimegig: {s.typeofworkcontractorparttimefulltimegig}</div>
+    <br />
+    <br />
+  </div>
+)
+
+export default () => {
+  const [seekers, setSeekers] = useState<Seekers>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+    getData(sheetId, o => {
+      o.forEach(e => {
+        if (e.title === 'candidates') {
+          setSeekers(e.entries)
+        }
+      })
+      setIsLoading(false)
+    })
+  }, [])
+  return (
+    <IndexLayout>
+      <Page>
+        <Container>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            seekers.map((j, i) => renderSeeker(fromEntries(j as never) as Seeker, i))
+          )}
+        </Container>
+      </Page>
+    </IndexLayout>
+  )
+}
+
+type Seekers = Array<Array<[string, string]>>
+
+type Seeker = {
   describeyourskills: string
   emailaddress: string
   firstname: string
@@ -18,53 +72,4 @@ type Candidate = {
   skills: string
   timestamp: string
   typeofworkcontractorparttimefulltimegig: string
-}
-
-interface CandidateQuery {
-  allGoogleSheet: {
-    nodes: Array<{
-      candidates: Array<Candidate>
-    }>
-  }
-}
-
-const JobSeeker: FC<Candidate> = c => (
-  <div key={c.id}>
-    {c.firstname}
-    <br />
-    {c.id}
-  </div>
-)
-
-export default () => {
-  const data: CandidateQuery = useStaticQuery(graphql`
-    query Candidates {
-      allGoogleSheet {
-        nodes {
-          candidates {
-            describeyourskills
-            emailaddress
-            firstname
-            id
-            jobtitle
-            lastname
-            linkedinorportfoliourl
-            phonenumber
-            resumelink
-            skills
-            timestamp
-            typeofworkcontractorparttimefulltimegig
-          }
-        }
-      }
-    }
-  `)
-  const nodes = data.allGoogleSheet.nodes
-  return (
-    <IndexLayout>
-      <Page>
-        <Container>{nodes.map(n => n.candidates.map(JobSeeker))}</Container>
-      </Page>
-    </IndexLayout>
-  )
 }

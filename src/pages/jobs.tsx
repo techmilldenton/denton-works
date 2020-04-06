@@ -6,22 +6,7 @@ import IndexLayout from '../layouts'
 import { sheetId } from '../constants'
 import { getData } from '../getSheets'
 import { fromEntries } from '../utils'
-
-type Job = {
-  id: string
-  timestamp: string
-  companyname: string
-  address: string
-  websiteurl: string
-  dentonchamberofcommercemember: string
-  emailaddress: string
-  phonenumber: string
-  jobtitle: string
-  jobdescription: string
-  typeofwork: string
-}
-
-type Jobs = Array<Array<[string, string]>>
+import { Loader } from '../components/Loader'
 
 const renderJob = (j: Job, key: number) => (
   <div key={key}>
@@ -46,26 +31,49 @@ const renderJob = (j: Job, key: number) => (
 
 export default () => {
   const [jobs, setJobs] = useState<Jobs>([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    // jobs.map(j => j.map(s => s))
+    setIsLoading(true)
+
     getData(sheetId, o => {
       o.forEach(e => {
         if (e.title === 'jobs') {
           setJobs(e.entries)
         }
       })
+
+      setIsLoading(false)
     })
   }, [])
 
   return (
     <IndexLayout>
       <Page>
-        <h1>Jobs</h1>
-        {/* {JSON.stringify(jobs)} */}
-        <Container>{jobs.map((j, i) => renderJob(fromEntries(j as never) as Job, i))}</Container>
+        <Container>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            jobs.map((j, i) => renderJob(fromEntries(j as never) as Job, i))
+          )}
+        </Container>
       </Page>
-      s
     </IndexLayout>
   )
 }
+
+type Job = {
+  id: string
+  timestamp: string
+  companyname: string
+  address: string
+  websiteurl: string
+  dentonchamberofcommercemember: string
+  emailaddress: string
+  phonenumber: string
+  jobtitle: string
+  jobdescription: string
+  typeofwork: string
+}
+
+type Jobs = Array<Array<[string, string]>>

@@ -5,14 +5,13 @@ import styled from '@emotion/styled'
 import { colors } from '../styles/variables'
 
 const Wrap = styled.div`
-  margin: 0 0 2em;
+  align-items: center;
+  display: flex;
   height: 100px;
-  width: 20%;
-  text-align: center;
-  padding: 1em;
+  justify-content: center;
+  margin: 0 0 2em;
   margin: 0 auto 1em;
-  display: inline-block;
-  vertical-align: top;
+  margin: auto;
 
   svg path,
   svg rect {
@@ -26,8 +25,8 @@ export function Loader() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        width="24"
-        height="30"
+        width="50"
+        height="50"
         x="0"
         y="0"
         enableBackground="new 0 0 50 50"
