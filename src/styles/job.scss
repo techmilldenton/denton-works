@@ -54,6 +54,30 @@ h6 {
       > * {
         margin-bottom: 10px;
       }
+      .row1,
+      .row2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        .btn {
+          order: 0;
+          flex: 0 1 auto;
+          align-self: auto;
+        }
+      }
+      .row2 {
+        flex-direction: row;
+        align-items: flex-start;
+        .btn {
+          flex: 2 1 auto;
+          &:first-child {
+            margin-right: 0.5em;
+          }
+        }
+      }
     }
   }
 
@@ -67,10 +91,19 @@ h6 {
     &:hover {
       background: lighten($blue, 10);
     }
-    &.alt {
-      background: none;
-      color: initial;
-      border: 1px solid #dedede;
+    &.secondary {
+      background: $green;
+      color: white;
+      &:hover {
+        background: lighten($green, 10);
+      }
+    }
+    &.tertiary {
+      background: $orange;
+      color: black;
+      &:hover {
+        background: lighten($orange, 10);
+      }
     }
   }
 

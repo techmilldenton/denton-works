@@ -24,22 +24,26 @@ const renderJob = (j: Job, key: number) => (
         <div className="description">{j.jobdescription}</div>
       </div>
       <div className="col-right">
-        <div className="contact-wrapper">
+        <div className="contact-wrapper row1">
           <a href={'mailto:' + j.emailaddress + '?subject=' + j.jobtitle} className="btn">
             Contact
           </a>
         </div>
-        <div className="rate-wrapper">
+        <div className="rate-wrapper row1">
           <span className="rate">{j.jobrate}</span>
         </div>
-        <div className="alt-icons">
-          <div className="phone">
-            <div>Phone: {j.phonenumber ? j.phonenumber : <>No ☎️ Provided!</>}</div>
-          </div>
+        <div className="alt-icons row2">
+          {j.phonenumber ? (
+            <a className="phone btn secondary" href={'tel:' + j.phonenumber}>
+              Call
+            </a>
+          ) : (
+            ''
+          )}
           {j.jobpostlink ? (
-            <div className="post-link">
-              <a href={j.jobpostlink}>Online Link</a>
-            </div>
+            <a href={j.jobpostlink} target="_blank" className="post-link btn tertiary">
+              Online Link
+            </a>
           ) : (
             ''
           )}
