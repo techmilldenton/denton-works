@@ -8,12 +8,6 @@ module.exports = {
   pathPrefix: '/denton-works',
   plugins: [
     {
-      resolve: 'gatsby-source-google-spreadsheets',
-      options: {
-        spreadsheetId: '1iCpYHV3MeGKyOlSjih4wFuhysAbEfgENLPpkJCO5jIs',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
