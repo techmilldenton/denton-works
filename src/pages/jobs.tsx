@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TimeAgo from 'react-timeago'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -9,6 +10,7 @@ import { getData } from '../getSheets'
 import { fromEntries } from '../utils'
 import { Loader } from '../components/Loader'
 import '../styles/job.scss'
+import '../styles/simple-grid.scss'
 
 const renderJob = (j: Job, key: number) => (
   <div key={key} className={'job job-' + key}>
@@ -44,9 +46,9 @@ const renderJob = (j: Job, key: number) => (
             ''
           )}
           {j.jobpostlink ? (
-            <a href={j.jobpostlink} target="_blank" className="post-link btn tertiary">
+            <OutboundLink href={j.jobpostlink} target="_blank" className="post-link btn tertiary">
               Online Link
-            </a>
+            </OutboundLink>
           ) : (
             ''
           )}
@@ -69,16 +71,16 @@ const renderJob = (j: Job, key: number) => (
         </div>
         <div className="links">
           {j.websiteurl ? (
-            <a target="_blank" href={j.websiteurl}>
+            <OutboundLink target="_blank" href={j.websiteurl}>
               🔗
-            </a>
+            </OutboundLink>
           ) : (
             ''
           )}
         </div>
       </div>
       <div className="address">
-        <a
+        <OutboundLink
           target="_blank"
           href={
             'https://www.google.com/maps/search/?api=1&query=' +
@@ -88,7 +90,7 @@ const renderJob = (j: Job, key: number) => (
           }
         >
           {j.address}
-        </a>
+        </OutboundLink>
       </div>
     </div>
   </div>
