@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resources
-description: A list
+description: Utilize various resources provided by local organizations to aid in your job search.
 ---
 
 Whether you're looking for work or looking to hire - Denton has a number of resources available to you.
@@ -12,11 +12,15 @@ Whether you're looking for work or looking to hire - Denton has a number of reso
 - [Small Business Development Center](http://www.nctc.edu/external-affairs/small-business-development-center/index.html)
 - [Texas Workforce Commission](https://www.twc.texas.gov)
 
-## A message from the Chamber
+## A message from our Partners
 
-The Chamber is dedicated to helping you and your business through COVID-19.
+This website is a community-driven project to help provide resources for those affected by the economic impact of COVID-19. Between the Chamber of Commerce, Stoke, and TechMill - we're here as local resources to support you to the best of our abilities. Below you will find a message from each of our representing partners in how we're best suited to support you in this time of need.
 
-## A message from Stoke
+### Denton Chamber of Commerce
+
+The Denton Chamber is dedicated to helping you and your business through COVID-19. And when restrictions are lifted, the Denton Chamber will continue our mission to “Advocate, Educate and Collaborate for Economic Growth in Denton.” A robust, connected Denton workforce will help accomplish that mission while increasing Denton’s ability to attract and sustain growth.
+
+### Stoke Coworking
 
 On March 25th when Denton County entered the "Stay at Home" order, Stoke was forced to shut our doors. Even though Stoke is closed, we are committed to providing support, connection, and resources to our members and to the Denton community and keeping our team employed.
 
@@ -28,6 +32,4 @@ We compiled a list of resources that we continue to add to as more information c
 
 At this point, we know that we will be closed through the month of April due to the Governor's order that non-essential businesses be closed. Regardless, we remain committed to cultivating community and empowering entrepreneurs by providing support, events, programs, and opportunities to connect both to our members and to the Denton business community as a whole.
 
-## A message from TechMill
-
-content here
+### TechMill Denton
