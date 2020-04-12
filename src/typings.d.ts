@@ -13,3 +13,18 @@ declare module '*.module.css' {
   const cssModule: CSSModule
   export = cssModule
 }
+
+declare module '*.png' {
+  const content: string
+  export = content
+}
+
+declare module '*.jpg' {
+  const content: string
+  export = content
+}
+
+declare module '*.gif' {
+  const content: string
+  export = content
+}
