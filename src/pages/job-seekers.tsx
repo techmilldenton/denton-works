@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import Gravatar from 'react-gravatar'
+import { Phone, Mail, Link, FileText } from 'react-feather'
+import TimeAgo from 'react-timeago'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -7,23 +10,70 @@ import { sheetId } from '../constants'
 import { getData } from '../getSheets'
 import { fromEntries } from '../utils'
 import { Loader } from '../components/Loader'
+import '../styles/simple-grid.scss'
+import '../styles/job-seeker.scss'
 
 const renderSeeker = (s: Seeker, key: number) => (
-  <div key={key}>
-    <div>describeyourskills: {s.describeyourskills}</div>
-    <div>emailaddress: {s.emailaddress}</div>
-    <div>firstname: {s.firstname}</div>
-    <div>id: {s.id}</div>
-    <div>jobtitle: {s.jobtitle}</div>
-    <div>lastname: {s.lastname}</div>
-    <div>linkedinorportfoliourl: {s.linkedinorportfoliourl}</div>
-    <div>phonenumber: {s.phonenumber}</div>
-    <div>resumelink: {s.resumelink}</div>
-    <div>skills: {s.skills}</div>
-    <div>timestamp: {s.timestamp}</div>
-    <div>typeofworkcontractorparttimefulltimegig: {s.typeofworkcontractorparttimefulltimegig}</div>
-    <br />
-    <br />
+  <div className={'col-4 job-seeker job-seeker-' + key} key={key}>
+    <div className="top ">
+      <div className="joined">
+        Joined <TimeAgo date={s.timestamp} />
+      </div>
+      {s.typeofworkcontractorparttimefulltimegig ? (
+        <div className="seeking">
+          <span className="job-type">Seeking {s.typeofworkcontractorparttimefulltimegig}</span>
+        </div>
+      ) : (
+        ''
+      )}
+    </div>
+    <div className="header">
+      <div className="image">
+        <Gravatar email={s.emailaddress} size={125} />
+      </div>
+      <div className="name">
+        {s.firstname} {s.lastname}
+      </div>
+      <div className="title">
+        <small>{s.jobtitle}</small>
+      </div>
+    </div>
+    <ul className="links">
+      <li className="email">
+        <a href={'mailto:' + s.emailaddress}>
+          <Mail />
+        </a>
+      </li>
+      {s.phonenumber ? (
+        <li className="phone">
+          <a href={'tel:' + s.phonenumber}>
+            <Phone />
+          </a>
+        </li>
+      ) : (
+        ''
+      )}
+      {s.linkedinorportfoliourl ? (
+        <li className="portfolio">
+          <a href={s.linkedinorportfoliourl} target="_blank">
+            <Link />
+          </a>
+        </li>
+      ) : (
+        ''
+      )}
+      {s.resumelink ? (
+        <li className="resume">
+          <a href={s.resumelink} target="_blank">
+            <FileText />
+          </a>
+        </li>
+      ) : (
+        ''
+      )}
+    </ul>
+    <div className="content">{s.describeyourskills}</div>
+    <div className="skills">{s.skills}</div>
   </div>
 )
 
@@ -45,7 +95,7 @@ export default () => {
   return (
     <IndexLayout>
       <Page>
-        <Container>
+        <Container className="job-seekers row">
           {isLoading ? (
             <Loader />
           ) : (
