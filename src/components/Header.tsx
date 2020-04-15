@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
   @media only screen and (max-width: 1025px) {
     flex-direction: column;
     justify-content: space-around;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     height: 180px;
   }
 `
@@ -39,7 +39,7 @@ const HomepageLink = styled(Link)`
   margin: 0 12px;
 
   @media only screen and (max-width: 1025px) {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
     margin: 0 4px;
   }
 `

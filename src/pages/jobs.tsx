@@ -9,8 +9,12 @@ import { sheetId } from '../constants'
 import { getData } from '../getSheets'
 import { fromEntries } from '../utils'
 import { Loader } from '../components/Loader'
+import { Job } from '../models'
+
 import '../styles/job.scss'
 import '../styles/simple-grid.scss'
+
+type Jobs = Array<Array<[keyof Job, string]>>
 
 const renderJob = (j: Job, key: number) => (
   <div key={key} className={'job job-' + key}>
@@ -103,7 +107,7 @@ export default () => {
   useEffect(() => {
     setIsLoading(true)
 
-    getData(sheetId, o => {
+    getData<Jobs>(sheetId, o => {
       o.forEach(e => {
         if (e.title === 'jobs') {
           setJobs(e.entries)
@@ -118,32 +122,9 @@ export default () => {
     <IndexLayout>
       <Page>
         <Container>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            jobs.map((j, i) => renderJob(fromEntries(j as never) as Job, i))
-          )}
+          {isLoading ? <Loader /> : jobs.map((j, i) => renderJob(fromEntries(j), i))}
         </Container>
       </Page>
     </IndexLayout>
   )
 }
-
-type Job = {
-  id: string
-  timestamp: string
-  companyname: string
-  address: string
-  websiteurl: string
-  dentonchamberofcommercemember: string
-  emailaddress: string
-  phonenumber: string
-  jobtitle: string
-  jobdescription: string
-  typeofwork: string
-  jobcategory: string
-  jobrate: string
-  jobpostlink: string
-}
-
-type Jobs = Array<Array<[string, string]>>
