@@ -1581,6 +1581,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-gravatar@^2.6.7":
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/@types/react-gravatar/-/react-gravatar-2.6.7.tgz#1ef929509cf4e7a6b423eb77e11c54ddbfa97b95"
+  integrity sha512-/NYulxNKmAeiRtf2VkB8SDvhXb2b3n1NecvIue/uoIE7XB18/+sAXitx9JiTl01uFBp2aj/XuiC8+M6P5sWuaw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-helmet@^5.0.8":
   version "5.0.15"
   resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.15.tgz#af0370617307e9f062c6aee0f1f5588224ce646e"

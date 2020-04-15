@@ -61,7 +61,3 @@ export const dimensions = {
   },
   containerPadding: 1.5,
 }
-
-export const heights = {
-  header: 100,
-}

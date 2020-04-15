@@ -27,6 +27,17 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true, // Print removed selectors and processed file names
+    //     // develop: true, // Enable while using `gatsby develop`
+    //     // tailwind: true, // Enable tailwindcss support
+    //     // whitelist: ['whitelist'], // Don't remove this selector
+    //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+    //     // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -52,7 +63,6 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1rem',
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           {

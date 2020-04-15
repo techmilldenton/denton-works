@@ -1,18 +1,15 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-// import { transparentize } from 'polished'
 import { Link } from 'gatsby'
+// import { transparentize } from 'polished'
 
 import logo from '../images/denton_works-logo.png'
-import { heights, dimensions, colors, fonts } from '../styles/variables'
 import Container from './Container'
-import { companyFormUrl, jobSeekerFormUrl } from '../constants'
+import { dimensions, colors, fonts } from '../styles/variables'
 import { noUnderline } from '../styles/mixins'
 
-const { headingSizes } = dimensions
-
 const StyledHeader = styled.header`
-  height: ${heights.header}px;
+  height: 100px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
   display: flex;
@@ -20,27 +17,16 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  /**
-   * iPhone X break
-   */
-  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-    height: 200px;
+  @media only screen and (max-width: 1025px) {
     flex-direction: column;
     justify-content: space-around;
+    padding: 2rem 1rem;
+    height: 180px;
   }
 `
 
-const LogoWrap = styled(Container)``
-
 const Logo = styled.img`
   width: 400px;
-`
-
-const TabsWrap = styled(Container)``
-
-const TabButtonWrap = styled(Container)`
-  display: flex;
-  flex-direction: row;
 `
 
 const HomepageLink = styled(Link)`
@@ -52,11 +38,8 @@ const HomepageLink = styled(Link)`
   font-weight: 600;
   margin: 0 12px;
 
-  /**
-   * iPhone X break
-   */
-  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-    font-size: 1rem;
+  @media only screen and (max-width: 1025px) {
+    font-size: 1.125rem;
     margin: 0 4px;
   }
 `
@@ -73,49 +56,23 @@ const HeaderLink = ({ to, text }: { to: string; text: string }) => (
   </HomepageLink>
 )
 
-const SubButtons = styled.a`
-  ${noUnderline}
-  align-items: center;
-  background-color: ${colors.white};
-  border-radius: 12px;
-  color: ${colors.brandGreen};
-  display: flex;
-  font-size: ${headingSizes.h4}rem;
-  height: 30px;
-  justify-content: center;
-  padding: 12px;
-
-  &:first-of-type {
-    margin-right: 12px;
-  }
-`
-
 interface HeaderProps {
   title: string
 }
 
 export const Header: React.FC<HeaderProps> = () => (
   <StyledHeader>
-    <LogoWrap>
+    <Container>
       <Link to="/">
         <Logo src={logo} alt="denton works" />
       </Link>
-    </LogoWrap>
-    <TabsWrap>
-      <HeaderLink to="/" text="Home" />
-      <HeaderLink to="/job-seekers/" text="Job Seekers" />
+    </Container>
+    <Container>
       <HeaderLink to="/jobs/" text="Jobs" />
+      <HeaderLink to="/job-seekers/" text="Job Seekers" />
       <HeaderLink to="/resources/" text="Resources" />
-      <HeaderLink to="/contact/" text="Contact" />
-    </TabsWrap>
-    <TabButtonWrap>
-      <SubButtons href={companyFormUrl} target="blank">
-        Employers
-      </SubButtons>
-      <SubButtons href={jobSeekerFormUrl} target="blank">
-        Candidates
-      </SubButtons>
-    </TabButtonWrap>
+      <HeaderLink to="/about/" text="About" />
+    </Container>
   </StyledHeader>
 )
 
