@@ -64,13 +64,13 @@ const process = ({
  * @param onSuccess   callback function for success case
  * @param onFailure   callback function for failure case
  */
-export const getData = (
+export const getData = <R = [string, string][]>(
   key: string,
   onSuccess: (
     o: {
       id: string
       title: string
-      entries: [string, string][][]
+      entries: R
     }[]
   ) => void,
   onFailure?: (e: Error) => void
@@ -109,7 +109,7 @@ export const getData = (
           }
         })
 
-        onSuccess(o)
+        onSuccess((o as unknown) as { id: string; title: string; entries: R }[])
       })
     })
     .catch((e: Error) => {
