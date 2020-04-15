@@ -1,9 +1,4 @@
-$green: #489f5b;
-$orange: #eea674;
-$blue: #3f5e9a;
-
-$font-family-sans: 'Lato', sans-serif;
-$font-family-sans-serif: 'Zilla Slab', serif;
+@import './theme.scss';
 
 * {
   font-family: $font-family-sans;
@@ -14,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-serif;
 }
 
 .job {
@@ -84,18 +79,18 @@ h6 {
   .btn {
     display: inline-block;
     padding: 8px 10px;
-    background: $blue;
+    background: $dark-blue;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     &:hover {
-      background: lighten($blue, 10);
+      background: lighten($dark-blue, 10);
     }
     &.secondary {
-      background: $green;
+      background: $dark-green;
       color: white;
       &:hover {
-        background: lighten($green, 10);
+        background: lighten($dark-green, 10);
       }
     }
     &.tertiary {
@@ -120,7 +115,7 @@ h6 {
     .type {
       display: inline-block;
       text-transform: uppercase;
-      background-color: $green;
+      background-color: $dark-green;
       padding: 3px 5px;
       border-radius: 5px;
       font-size: 12px;

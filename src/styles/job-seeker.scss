@@ -1,9 +1,4 @@
-$green: #489f5b;
-$orange: #eea674;
-$blue: #3f5e9a;
-
-$font-family-sans: 'Lato', sans-serif;
-$font-family-sans-serif: 'Zilla Slab', serif;
+@import './theme.scss';
 
 .job-seeker {
   border-radius: 5px;
@@ -18,7 +13,7 @@ $font-family-sans-serif: 'Zilla Slab', serif;
       text-align: right;
       float: right;
       .job-type {
-        background-color: $green;
+        background-color: $dark-green;
         color: white;
         padding: 4px 6px;
         border-radius: 5px;
