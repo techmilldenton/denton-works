@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{ZXaO:function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u),c=t("NqE+"),l=t("TBFr"),o=t("+ego"),r=t("qKvR");e.default=function(){return Object(r.d)(o.a,null,Object(r.d)(c.a,null,Object(r.d)(l.a,null,Object(r.d)(a.a.Fragment,null,"Resources"))))}}}]);
+//# sourceMappingURL=component---src-pages-resources-tsx-50b0f638b4f380b1cccb.js.map
