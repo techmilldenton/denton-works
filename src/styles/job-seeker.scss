@@ -1,0 +1,57 @@
+$green: #489f5b;
+$orange: #eea674;
+$blue: #3f5e9a;
+
+$font-family-sans: 'Lato', sans-serif;
+$font-family-sans-serif: 'Zilla Slab', serif;
+
+.job-seeker {
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  .top {
+    font-size: 12px;
+    > div {
+      float: left;
+      padding: 10px 15px;
+    }
+    .seeking {
+      text-align: right;
+      float: right;
+      .job-type {
+        background-color: $green;
+        color: white;
+        padding: 4px 6px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .header {
+    clear: both;
+    padding: 15px;
+    text-align: center;
+    .image {
+      img {
+        border-radius: 50%;
+      }
+    }
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 5px 0;
+      font-family: $font-family-sans-serif;
+    }
+  }
+  .links {
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    li {
+      list-style: none;
+    }
+  }
+  .content {
+    padding: 0 15px 10px;
+    font-size: 12px;
+  }
+}
