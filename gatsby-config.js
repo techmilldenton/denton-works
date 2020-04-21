@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://www.denton.works',
     image: '/images/denton-works-social.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@techmilldenton',
+    twitterCard: 'summary_large_image',
   },
   pathPrefix: '/denton-works',
   plugins: [

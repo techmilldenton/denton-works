@@ -17,6 +17,7 @@ interface StaticQueryProps {
       keywords: string
       image: string
       twitterUsername: string
+      twitterCard: string
       siteUrl: string
     }
   }
@@ -33,6 +34,7 @@ const IndexLayout: React.FC = ({ children }) => (
             keywords
             image
             twitterUsername
+            twitterCard
             siteUrl
           }
         }
@@ -50,6 +52,7 @@ const IndexLayout: React.FC = ({ children }) => (
               content: data.site.siteMetadata.siteUrl + data.site.siteMetadata.image,
             },
             { name: 'twitter:creator', content: data.site.siteMetadata.twitterUsername },
+            { name: 'twitter:card', content: data.site.siteMetadata.twitterCard },
             { name: 'twitter:title', content: data.site.siteMetadata.title },
             { name: 'og:url', content: data.site.siteMetadata.siteUrl },
             { name: 'og:type', content: 'website' },

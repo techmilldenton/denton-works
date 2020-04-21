@@ -13,6 +13,7 @@ interface PageTemplateProps {
         description: string
         image: string
         twitterUsername: string
+        twitterCard: string
         siteUrl: string
       }
     }
