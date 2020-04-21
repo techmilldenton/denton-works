@@ -12,7 +12,6 @@ import { Loader } from '../components/Loader'
 import { Job } from '../models'
 
 import '../styles/job.scss'
-import '../styles/simple-grid.scss'
 
 type Jobs = Array<Array<[keyof Job, string]>>
 

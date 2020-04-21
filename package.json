@@ -36,6 +36,7 @@
     "normalize.css": "^8.0.1",
     "polished": "^3.5.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.4",
     "react-gravatar": "^2.6.3",
