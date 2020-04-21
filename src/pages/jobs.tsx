@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import TimeAgo from 'react-timeago'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Markdown from 'markdown-to-jsx'
-import { MapPin, Link, FileText } from 'react-feather'
+import { MapPin, Link } from 'react-feather'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -39,7 +39,7 @@ const renderJob = (j: Job, key: number) => (
             <span className="job-type badge badge-primary ml-2">{j.typeofwork}</span>
           </h4>
           <p className="description">
-            <Markdown>{j.jobdescription}</Markdown>
+            <Markdown>{j.jobdescription.replace(/(\r\n|\n|\r)/gm, '<br/>')}</Markdown>
           </p>
         </div>
         <div className="col-md-3">
