@@ -11,6 +11,8 @@ interface PageTemplateProps {
       siteMetadata: {
         title: string
         description: string
+        image: string
+        twitterUsername: string
       }
     }
     markdownRemark: {

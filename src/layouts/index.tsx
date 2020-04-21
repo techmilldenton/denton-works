@@ -15,6 +15,8 @@ interface StaticQueryProps {
       title: string
       description: string
       keywords: string
+      image: string
+      twitterUsername: string
     }
   }
 }
@@ -27,6 +29,9 @@ const IndexLayout: React.FC = ({ children }) => (
           siteMetadata {
             title
             description
+            keywords
+            image
+            twitterUsername
           }
         }
       }
@@ -38,9 +43,11 @@ const IndexLayout: React.FC = ({ children }) => (
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
+            { name: 'image', content: data.site.siteMetadata.image },
+            { name: 'twitter:creator', content: data.site.siteMetadata.twitterUsername },
+            { name: 'twitter:card', content: 'summary_large_image' },
           ]}
-        />
-        <Helmet>
+        >
           <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
