@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Gravatar from 'react-gravatar'
-import { Phone, Mail, Link, FileText } from 'react-feather'
 import TimeAgo from 'react-timeago'
 
 import Page from '../components/Page'
@@ -13,13 +11,6 @@ import { Loader } from '../components/Loader'
 import { Seekers, Seeker } from '../models'
 
 import '../styles/job-seeker.scss'
-
-const colors = {
-  opts: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light'],
-  pick: i => {
-    return colors.opts[Math.floor(Math.random() * colors.opts.length)]
-  },
-}
 
 const renderSeeker = (s: Seeker, key: number) =>
   !s.approved ? null : (

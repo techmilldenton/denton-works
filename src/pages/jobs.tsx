@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import TimeAgo from 'react-timeago'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Markdown from 'markdown-to-jsx'
+import { MapPin, Link, FileText } from 'react-feather'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -89,28 +90,30 @@ const renderJob = (j: Job, key: number) => (
               </div>
             )}
           </div>
-          <div className="links">
+        </div>
+        <div className="links col-md-4">
+          <div className="btn-group float-right" role="group" aria-label="Company Links">
             {j.websiteurl ? (
-              <OutboundLink target="_blank" href={j.websiteurl}>
-                🔗
+              <OutboundLink target="_blank" href={j.websiteurl} className="btn">
+                <Link /> Website
               </OutboundLink>
             ) : (
               ''
             )}
+
+            <OutboundLink
+              target="_blank"
+              className="btn"
+              href={
+                'https://www.google.com/maps/search/?api=1&query=' +
+                j.companyname.replace(/\s/g, '+') +
+                '+' +
+                j.address.replace(/\s/g, '+')
+              }
+            >
+              <MapPin /> Address
+            </OutboundLink>
           </div>
-        </div>
-        <div className="address col-md-4">
-          <OutboundLink
-            target="_blank"
-            href={
-              'https://www.google.com/maps/search/?api=1&query=' +
-              j.companyname.replace(/\s/g, '+') +
-              '+' +
-              j.address.replace(/\s/g, '+')
-            }
-          >
-            {j.address}
-          </OutboundLink>
         </div>
       </div>
     </div>
