@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TimeAgo from 'react-timeago'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import Markdown from 'markdown-to-jsx'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -16,84 +17,101 @@ import '../styles/job.scss'
 type Jobs = Array<Array<[keyof Job, string]>>
 
 const renderJob = (j: Job, key: number) => (
-  <div key={key} className={'job job-' + key}>
-    <div className="top">
-      <div className="time">
-        <TimeAgo date={j.timestamp} />
+  <div key={key} className={'card mb-4 job job-' + key}>
+    <div className="card-header">
+      <div className="row">
+        <div className="col-md-4">
+          <div className="time">
+            Added <TimeAgo date={j.timestamp} />
+          </div>
+        </div>
+        <div className="col-md-8">
+          <div className="category text-right">{j.jobcategory}</div>
+        </div>
       </div>
-      <div className="category">{j.jobcategory}</div>
     </div>
-    <div className="middle">
-      <div className="col-left">
-        <h4 className="title">
-          {j.jobtitle}
-          <span className="type">{j.typeofwork}</span>
-        </h4>
-        <div className="description">{j.jobdescription}</div>
-      </div>
-      <div className="col-right">
-        <div className="contact-wrapper row1">
-          <a href={'mailto:' + j.emailaddress + '?subject=' + j.jobtitle} className="btn">
-            Contact
-          </a>
+    <div className="card-body">
+      <div className="row">
+        <div className="col-md-9">
+          <h4 className="card-title">
+            {j.jobtitle}
+            <span className="job-type badge badge-primary ml-2">{j.typeofwork}</span>
+          </h4>
+          <p className="description">
+            <Markdown>{j.jobdescription}</Markdown>
+          </p>
         </div>
-        <div className="rate-wrapper row1">
-          <span className="rate">{j.jobrate}</span>
-        </div>
-        <div className="alt-icons row2">
-          {j.phonenumber ? (
-            <a className="phone btn secondary" href={'tel:' + j.phonenumber}>
-              Call
+        <div className="col-md-3">
+          <div className="contact-wrapper">
+            <a
+              href={'mailto:' + j.emailaddress + '?subject=' + j.jobtitle}
+              className="btn btn-block btn-success mb-1"
+            >
+              Contact
             </a>
-          ) : (
-            ''
-          )}
-          {j.jobpostlink ? (
-            <OutboundLink href={j.jobpostlink} target="_blank" className="post-link btn tertiary">
-              Online Link
-            </OutboundLink>
-          ) : (
-            ''
-          )}
+            {j.phonenumber ? (
+              <a className="phone btn btn-block btn-primary mb-1" href={'tel:' + j.phonenumber}>
+                Call
+              </a>
+            ) : (
+              ''
+            )}
+            {j.jobpostlink ? (
+              <OutboundLink
+                href={j.jobpostlink}
+                target="_blank"
+                className="post-link btn btn-block btn-warning mb-1"
+              >
+                Online Link
+              </OutboundLink>
+            ) : (
+              ''
+            )}
+          </div>
+          <div className="rate-wrapper text-center py-2">
+            <strong className="rate btn btn-block btn-default">{j.jobrate}</strong>
+          </div>
         </div>
       </div>
     </div>
-    <div className="bottom">
-      <div className="company">
-        <div className="name">
-          {j.companyname}
-          {j.dentonchamberofcommercemember && (
-            <div className="coc">
-              <img
-                src="https://cdn.jsdelivr.net/gh/techmilldenton/denton-works@master/src/images/dcoc-logo.svg"
-                alt="Denton Chamber of Commerce Member"
-                title="Denton Chamber of Commerce Member"
-              ></img>
-            </div>
-          )}
+    <div className="card-footer">
+      <div className="row">
+        <div className="company col-md-8">
+          <div className="name">
+            {j.companyname}
+            {j.dentonchamberofcommercemember && (
+              <div className="coc">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/techmilldenton/denton-works@master/src/images/dcoc-logo.svg"
+                  alt="Denton Chamber of Commerce Member"
+                  title="Denton Chamber of Commerce Member"
+                ></img>
+              </div>
+            )}
+          </div>
+          <div className="links">
+            {j.websiteurl ? (
+              <OutboundLink target="_blank" href={j.websiteurl}>
+                🔗
+              </OutboundLink>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
-        <div className="links">
-          {j.websiteurl ? (
-            <OutboundLink target="_blank" href={j.websiteurl}>
-              🔗
-            </OutboundLink>
-          ) : (
-            ''
-          )}
+        <div className="address col-md-4">
+          <OutboundLink
+            target="_blank"
+            href={
+              'https://www.google.com/maps/search/?api=1&query=' +
+              j.companyname.replace(/\s/g, '+') +
+              '+' +
+              j.address.replace(/\s/g, '+')
+            }
+          >
+            {j.address}
+          </OutboundLink>
         </div>
-      </div>
-      <div className="address">
-        <OutboundLink
-          target="_blank"
-          href={
-            'https://www.google.com/maps/search/?api=1&query=' +
-            j.companyname.replace(/\s/g, '+') +
-            '+' +
-            j.address.replace(/\s/g, '+')
-          }
-        >
-          {j.address}
-        </OutboundLink>
       </div>
     </div>
   </div>

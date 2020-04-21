@@ -27,7 +27,7 @@ const renderSeeker = (s: Seeker, key: number) =>
       <div className="card-header">
         <div className="row">
           <div className="col-md-9">
-            <h4 className="name mb-0">
+            <h4 className="name mb-0 mt-0">
               {s.firstname} {s.lastname}
             </h4>
           </div>

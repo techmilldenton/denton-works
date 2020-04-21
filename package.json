@@ -32,6 +32,7 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "axios": "^0.19.2",
+    "markdown-to-jsx": "^6.11.1",
     "modern-normalize": "^0.6.0",
     "normalize.css": "^8.0.1",
     "polished": "^3.5.1",
