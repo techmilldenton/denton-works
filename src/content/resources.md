@@ -33,3 +33,9 @@ We compiled a list of resources that we continue to add to as more information c
 At this point, we know that we will be closed through the month of April due to the Governor's order that non-essential businesses be closed. Regardless, we remain committed to cultivating community and empowering entrepreneurs by providing support, events, programs, and opportunities to connect both to our members and to the Denton business community as a whole.
 
 ### TechMill Denton
+
+Most of you might not know this, but TechMill's board members are made up entirely of volunteers by night and who are tech professionals by day, ranging from engineers, data scientists, teachers, and freelancers. As TechMill's mission is to support the local Denton tech and startup community through education and networking events, we're committed to providing channels for individuals to connect with other tech professionals, ask questions, embark on personal growth projects, and support you in your continuous tech education journey.
+
+TechMill works very closely with our community partners at Stoke, so if you are interested in learning a technical topic, whether it be broad or niche, don't esitate to reach out and we would be happy to organize a free, online public training session around it. You can contact us directly at <a href="mailto:info@techmill.co?subject=TechMill Training Session">info@techmill.co</a>, or contact Stoke and we'll always stay in contact.
+
+Stay healthy, stay safe, and never give up in a journey towards self-improvement.

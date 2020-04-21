@@ -4,6 +4,8 @@ module.exports = {
     description: 'A hub for connecting local talent with local businesses.',
     keywords: 'techmill, denton, local, coworking, stoke, gatsby, react',
     siteUrl: 'https://www.denton.works',
+    image: '/images/denton-works-social.png', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@techmilldenton',
   },
   pathPrefix: '/denton-works',
   plugins: [
@@ -80,7 +82,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+        siteUrl: 'https://www.denton.works',
       },
     },
     'gatsby-plugin-emotion',

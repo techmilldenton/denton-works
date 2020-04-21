@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 // import { transparentize } from 'polished'
 
-import logo from '../images/denton_works-logo.png'
 import Container from './Container'
 import { dimensions, colors, fonts } from '../styles/variables'
 import { noUnderline } from '../styles/mixins'
@@ -23,10 +22,6 @@ const StyledHeader = styled.header`
     padding: 1.5rem 1rem;
     height: 180px;
   }
-`
-
-const Logo = styled.img`
-  width: 400px;
 `
 
 const HomepageLink = styled(Link)`
@@ -63,8 +58,8 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = () => (
   <StyledHeader>
     <Container>
-      <Link to="/">
-        <Logo src={logo} alt="denton works" />
+      <Link to="/" className="home-link">
+        <img src={'/images/logo.png'} alt="denton works" style={{ maxWidth: '400px' }} />
       </Link>
     </Container>
     <Container>
