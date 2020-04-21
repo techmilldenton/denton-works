@@ -13,6 +13,7 @@ interface PageTemplateProps {
         description: string
         image: string
         twitterUsername: string
+        siteUrl: string
       }
     }
     markdownRemark: {

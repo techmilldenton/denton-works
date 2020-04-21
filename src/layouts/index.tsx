@@ -17,6 +17,7 @@ interface StaticQueryProps {
       keywords: string
       image: string
       twitterUsername: string
+      siteUrl: string
     }
   }
 }
@@ -32,6 +33,7 @@ const IndexLayout: React.FC = ({ children }) => (
             keywords
             image
             twitterUsername
+            siteUrl
           }
         }
       }
@@ -43,10 +45,20 @@ const IndexLayout: React.FC = ({ children }) => (
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
-            { name: 'image', content: data.site.siteMetadata.image },
+            {
+              name: 'image',
+              content: data.site.siteMetadata.siteUrl + data.site.siteMetadata.image,
+            },
             { name: 'twitter:creator', content: data.site.siteMetadata.twitterUsername },
             { name: 'twitter:title', content: data.site.siteMetadata.title },
-            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'og:url', content: data.site.siteMetadata.siteUrl },
+            { name: 'og:type', content: 'website' },
+            { name: 'og:title', content: data.site.siteMetadata.title },
+            { name: 'og:description', content: data.site.siteMetadata.description },
+            {
+              name: 'og:image',
+              content: data.site.siteMetadata.siteUrl + data.site.siteMetadata.image,
+            },
           ]}
         >
           <link
