@@ -45,6 +45,7 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'keywords', content: data.site.siteMetadata.keywords },
             { name: 'image', content: data.site.siteMetadata.image },
             { name: 'twitter:creator', content: data.site.siteMetadata.twitterUsername },
+            { name: 'twitter:title', content: data.site.siteMetadata.title },
             { name: 'twitter:card', content: 'summary_large_image' },
           ]}
         >
