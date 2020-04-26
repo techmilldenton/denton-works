@@ -144,7 +144,7 @@ export default () => {
     <IndexLayout>
       <Page>
         <Container>
-          {isLoading ? <Loader /> : jobs.map((j, i) => renderJob(fromEntries(j), i))}
+          {isLoading ? <Loader /> : jobs.reverse().map((j, i) => renderJob(fromEntries(j), i))}
         </Container>
       </Page>
     </IndexLayout>

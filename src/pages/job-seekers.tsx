@@ -118,7 +118,11 @@ export default () => {
     <IndexLayout>
       <Page className="container">
         <Container className="job-seekers">
-          {isLoading ? <Loader /> : seekers.map((j, i) => renderSeeker(fromEntries(j), i))}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            seekers.reverse().map((j, i) => renderSeeker(fromEntries(j), i))
+          )}
         </Container>
       </Page>
     </IndexLayout>
